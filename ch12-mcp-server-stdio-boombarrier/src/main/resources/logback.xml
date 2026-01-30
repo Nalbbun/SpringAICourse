@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!-- STDOUT / STDERR로 로그가 출력되는 것을 완전 차단 설정 -->
+    <statusListener class="ch.qos.logback.core.status.NopStatusListener"/>
+    <!-- 로그가 저장될 파일명과 로그 출력 패턴 설정  -->
+    <appender name="fileAppender" class="ch.qos.logback.core.FileAppender">
+        <file>ch12-mcp-server-stdio-boombarrier.log</file>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <!-- 전체 로그 설정 -->
+    <root level="INFO">
+        <appender-ref ref="fileAppender"/>
+    </root>
+</configuration>

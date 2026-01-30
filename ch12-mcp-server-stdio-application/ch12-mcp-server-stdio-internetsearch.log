@@ -1,0 +1,476 @@
+2025-12-05 15:45:56.820 INFO  [main] com.example.demo.DemoApplication - Starting DemoApplication v0.0.1-SNAPSHOT using Java 21.0.7 with PID 13516 (D:\Work\spring-ai\출판\2판\소스\projects\ch12-mcp-server-stdio-internetsearch\build\libs\ch12-mcp-server-stdio-internetsearch-0.0.1-SNAPSHOT.jar started by blueskii in D:\Work\spring-ai\출판\2판\소스\projects\ch12-mcp-server-stdio-application)
+2025-12-05 15:45:56.822 INFO  [main] com.example.demo.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2025-12-05 15:45:57.522 WARN  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2025-12-05 15:45:57.529 WARN  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'serverAnnotatedBeanRegistry' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration$ServerMcpAnnotatedBeans] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2025-12-05 15:45:57.542 WARN  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.ai.mcp.server.annotation-scanner-org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerProperties' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2025-12-05 15:45:58.405 INFO  [main] o.s.a.m.s.c.a.McpServerAutoConfiguration - Enable tools capabilities, notification: true
+2025-12-05 15:45:58.406 INFO  [main] o.s.a.m.s.c.a.McpServerAutoConfiguration - Registered tools: 2
+2025-12-05 15:45:58.406 INFO  [main] o.s.a.m.s.c.a.McpServerAutoConfiguration - Enable resources capabilities, notification: true
+2025-12-05 15:45:58.407 INFO  [main] o.s.a.m.s.c.a.McpServerAutoConfiguration - Enable resources templates capabilities, notification: true
+2025-12-05 15:45:58.407 INFO  [main] o.s.a.m.s.c.a.McpServerAutoConfiguration - Enable prompts capabilities, notification: true
+2025-12-05 15:45:58.407 INFO  [main] o.s.a.m.s.c.a.McpServerAutoConfiguration - Enable completions capabilities
+2025-12-05 15:45:58.547 INFO  [pool-2-thread-1] i.m.server.McpAsyncServer - Client initialize request - Protocol: 2024-11-05, Capabilities: ClientCapabilities[experimental=null, roots=null, sampling=null, elicitation=null], Info: Implementation[name=spring-ai-mcp-client - ch12-mcp-server-stdio-internetsearch, title=ch12-mcp-server-stdio-internetsearch, version=1.0.0]
+2025-12-05 15:45:58.664 INFO  [main] com.example.demo.DemoApplication - Started DemoApplication in 2.248 seconds (process running for 3.099)
+2025-12-05 17:04:39.973 INFO  [main] com.example.demo.DemoApplication - Starting DemoApplication v0.0.1-SNAPSHOT using Java 21.0.7 with PID 32668 (D:\Work\spring-ai\출판\2판\소스\projects\ch12-mcp-server-stdio-internetsearch\build\libs\ch12-mcp-server-stdio-internetsearch-0.0.1-SNAPSHOT.jar started by blueskii in D:\Work\spring-ai\출판\2판\소스\projects\ch12-mcp-server-stdio-application)
+2025-12-05 17:04:39.976 INFO  [main] com.example.demo.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2025-12-05 17:04:40.631 WARN  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2025-12-05 17:04:40.633 WARN  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'serverAnnotatedBeanRegistry' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration$ServerMcpAnnotatedBeans] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2025-12-05 17:04:40.644 WARN  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.ai.mcp.server.annotation-scanner-org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerProperties' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2025-12-05 17:04:41.440 INFO  [main] o.s.a.m.s.c.a.McpServerAutoConfiguration - Enable tools capabilities, notification: true
+2025-12-05 17:04:41.442 INFO  [main] o.s.a.m.s.c.a.McpServerAutoConfiguration - Registered tools: 2
+2025-12-05 17:04:41.442 INFO  [main] o.s.a.m.s.c.a.McpServerAutoConfiguration - Enable resources capabilities, notification: true
+2025-12-05 17:04:41.443 INFO  [main] o.s.a.m.s.c.a.McpServerAutoConfiguration - Enable resources templates capabilities, notification: true
+2025-12-05 17:04:41.443 INFO  [main] o.s.a.m.s.c.a.McpServerAutoConfiguration - Enable prompts capabilities, notification: true
+2025-12-05 17:04:41.444 INFO  [main] o.s.a.m.s.c.a.McpServerAutoConfiguration - Enable completions capabilities
+2025-12-05 17:04:41.589 INFO  [pool-2-thread-1] i.m.server.McpAsyncServer - Client initialize request - Protocol: 2024-11-05, Capabilities: ClientCapabilities[experimental=null, roots=null, sampling=null, elicitation=null], Info: Implementation[name=spring-ai-mcp-client - ch12-mcp-server-stdio-internetsearch, title=ch12-mcp-server-stdio-internetsearch, version=1.0.0]
+2025-12-05 17:04:41.692 INFO  [main] com.example.demo.DemoApplication - Started DemoApplication in 2.133 seconds (process running for 2.92)
+2025-12-06 17:34:50.349 INFO  [main] com.example.demo.DemoApplication - Starting DemoApplication v0.0.1-SNAPSHOT using Java 21.0.8 with PID 21324 (D:\Work\spring-ai\출판\2판\소스\projects\ch12-mcp-server-stdio-internetsearch\build\libs\ch12-mcp-server-stdio-internetsearch-0.0.1-SNAPSHOT.jar started by blueskii in D:\Work\spring-ai\출판\2판\소스\projects\ch12-mcp-server-stdio-application)
+2025-12-06 17:34:50.351 INFO  [main] com.example.demo.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2025-12-06 17:34:51.062 WARN  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2025-12-06 17:34:51.064 WARN  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'serverAnnotatedBeanRegistry' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration$ServerMcpAnnotatedBeans] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2025-12-06 17:34:51.076 WARN  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.ai.mcp.server.annotation-scanner-org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerProperties' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2025-12-06 17:34:51.972 INFO  [main] o.s.a.m.s.c.a.McpServerAutoConfiguration - Enable tools capabilities, notification: true
+2025-12-06 17:34:51.973 INFO  [main] o.s.a.m.s.c.a.McpServerAutoConfiguration - Registered tools: 2
+2025-12-06 17:34:51.973 INFO  [main] o.s.a.m.s.c.a.McpServerAutoConfiguration - Enable resources capabilities, notification: true
+2025-12-06 17:34:51.973 INFO  [main] o.s.a.m.s.c.a.McpServerAutoConfiguration - Enable resources templates capabilities, notification: true
+2025-12-06 17:34:51.974 INFO  [main] o.s.a.m.s.c.a.McpServerAutoConfiguration - Enable prompts capabilities, notification: true
+2025-12-06 17:34:51.974 INFO  [main] o.s.a.m.s.c.a.McpServerAutoConfiguration - Enable completions capabilities
+2025-12-06 17:34:52.108 INFO  [pool-2-thread-1] i.m.server.McpAsyncServer - Client initialize request - Protocol: 2024-11-05, Capabilities: ClientCapabilities[experimental=null, roots=null, sampling=null, elicitation=null], Info: Implementation[name=spring-ai-mcp-client - ch12-mcp-server-stdio-internetsearch, title=ch12-mcp-server-stdio-internetsearch, version=1.0.0]
+2025-12-06 17:34:52.209 INFO  [main] com.example.demo.DemoApplication - Started DemoApplication in 2.257 seconds (process running for 3.046)
+2025-12-31 11:44:36.887 INFO  [main] com.example.demo.DemoApplication - Starting DemoApplication v0.0.1-SNAPSHOT using Java 21.0.7 with PID 25524 (D:\Work\spring-ai\출판\2판\소스\projects\ch12-mcp-server-stdio-internetsearch\build\libs\ch12-mcp-server-stdio-internetsearch-0.0.1-SNAPSHOT.jar started by blueskii in D:\Work\spring-ai\출판\2판\소스\projects\ch12-mcp-server-stdio-application)
+2025-12-31 11:44:36.890 INFO  [main] com.example.demo.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2025-12-31 11:44:37.601 WARN  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2025-12-31 11:44:37.615 WARN  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'serverAnnotatedBeanRegistry' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration$ServerMcpAnnotatedBeans] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2025-12-31 11:44:37.631 WARN  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.ai.mcp.server.annotation-scanner-org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerProperties' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2025-12-31 11:44:38.455 INFO  [main] o.s.a.m.s.c.a.McpServerAutoConfiguration - Enable tools capabilities, notification: true
+2025-12-31 11:44:38.456 INFO  [main] o.s.a.m.s.c.a.McpServerAutoConfiguration - Registered tools: 2
+2025-12-31 11:44:38.456 INFO  [main] o.s.a.m.s.c.a.McpServerAutoConfiguration - Enable resources capabilities, notification: true
+2025-12-31 11:44:38.456 INFO  [main] o.s.a.m.s.c.a.McpServerAutoConfiguration - Enable resources templates capabilities, notification: true
+2025-12-31 11:44:38.456 INFO  [main] o.s.a.m.s.c.a.McpServerAutoConfiguration - Enable prompts capabilities, notification: true
+2025-12-31 11:44:38.457 INFO  [main] o.s.a.m.s.c.a.McpServerAutoConfiguration - Enable completions capabilities
+2025-12-31 11:44:38.596 INFO  [pool-2-thread-1] i.m.server.McpAsyncServer - Client initialize request - Protocol: 2024-11-05, Capabilities: ClientCapabilities[experimental=null, roots=null, sampling=null, elicitation=null], Info: Implementation[name=spring-ai-mcp-client - ch12-mcp-server-stdio-internetsearch, title=ch12-mcp-server-stdio-internetsearch, version=1.0.0]
+2025-12-31 11:44:38.698 INFO  [main] com.example.demo.DemoApplication - Started DemoApplication in 2.225 seconds (process running for 3.01)
+2025-12-31 11:56:50.956 INFO  [main] com.example.demo.DemoApplication - Starting DemoApplication v0.0.1-SNAPSHOT using Java 21.0.7 with PID 10032 (D:\Work\spring-ai\출판\2판\소스\projects\ch12-mcp-server-stdio-internetsearch\build\libs\ch12-mcp-server-stdio-internetsearch-0.0.1-SNAPSHOT.jar started by blueskii in D:\Work\spring-ai\출판\2판\소스\projects\ch12-mcp-server-stdio-application)
+2025-12-31 11:56:50.959 INFO  [main] com.example.demo.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2025-12-31 11:56:51.595 WARN  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2025-12-31 11:56:51.595 WARN  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'serverAnnotatedBeanRegistry' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration$ServerMcpAnnotatedBeans] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2025-12-31 11:56:51.613 WARN  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.ai.mcp.server.annotation-scanner-org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerProperties' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2025-12-31 11:56:52.394 INFO  [main] o.s.a.m.s.c.a.McpServerAutoConfiguration - Enable tools capabilities, notification: true
+2025-12-31 11:56:52.394 INFO  [main] o.s.a.m.s.c.a.McpServerAutoConfiguration - Registered tools: 2
+2025-12-31 11:56:52.394 INFO  [main] o.s.a.m.s.c.a.McpServerAutoConfiguration - Enable resources capabilities, notification: true
+2025-12-31 11:56:52.394 INFO  [main] o.s.a.m.s.c.a.McpServerAutoConfiguration - Enable resources templates capabilities, notification: true
+2025-12-31 11:56:52.394 INFO  [main] o.s.a.m.s.c.a.McpServerAutoConfiguration - Enable prompts capabilities, notification: true
+2025-12-31 11:56:52.394 INFO  [main] o.s.a.m.s.c.a.McpServerAutoConfiguration - Enable completions capabilities
+2025-12-31 11:56:52.538 INFO  [pool-2-thread-1] i.m.server.McpAsyncServer - Client initialize request - Protocol: 2024-11-05, Capabilities: ClientCapabilities[experimental=null, roots=null, sampling=null, elicitation=null], Info: Implementation[name=spring-ai-mcp-client - ch12-mcp-server-stdio-internetsearch, title=ch12-mcp-server-stdio-internetsearch, version=1.0.0]
+2025-12-31 11:56:52.648 INFO  [main] com.example.demo.DemoApplication - Started DemoApplication in 2.098 seconds (process running for 2.956)
+2026-01-24 17:24:13.594 INFO  [main] com.example.demo.DemoApplication - Starting DemoApplication v0.0.1-SNAPSHOT using Java 21.0.9 with PID 26048 (D:\Work\ai\spring-ai\출판\소스\projects\ch12-mcp-server-stdio-internetsearch\build\libs\ch12-mcp-server-stdio-internetsearch-0.0.1-SNAPSHOT.jar started by blueskii in D:\Work\ai\spring-ai\출판\소스\projects\ch12-mcp-server-stdio-application)
+2026-01-24 17:24:13.596 INFO  [main] com.example.demo.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-24 17:24:14.261 WARN  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-01-24 17:24:14.263 WARN  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'serverAnnotatedBeanRegistry' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration$ServerMcpAnnotatedBeans] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-01-24 17:24:14.272 WARN  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.ai.mcp.server.annotation-scanner-org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerProperties' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-01-24 17:24:15.126 INFO  [main] o.s.a.m.s.c.a.McpServerAutoConfiguration - Enable tools capabilities, notification: true
+2026-01-24 17:24:15.127 INFO  [main] o.s.a.m.s.c.a.McpServerAutoConfiguration - Registered tools: 2
+2026-01-24 17:24:15.127 INFO  [main] o.s.a.m.s.c.a.McpServerAutoConfiguration - Enable resources capabilities, notification: true
+2026-01-24 17:24:15.128 INFO  [main] o.s.a.m.s.c.a.McpServerAutoConfiguration - Enable resources templates capabilities, notification: true
+2026-01-24 17:24:15.128 INFO  [main] o.s.a.m.s.c.a.McpServerAutoConfiguration - Enable prompts capabilities, notification: true
+2026-01-24 17:24:15.129 INFO  [main] o.s.a.m.s.c.a.McpServerAutoConfiguration - Enable completions capabilities
+2026-01-24 17:24:15.284 INFO  [pool-2-thread-1] i.m.server.McpAsyncServer - Client initialize request - Protocol: 2024-11-05, Capabilities: ClientCapabilities[experimental=null, roots=null, sampling=null, elicitation=null], Info: Implementation[name=spring-ai-mcp-client - ch12-mcp-server-stdio-internetsearch, title=ch12-mcp-server-stdio-internetsearch, version=1.0.0]
+2026-01-24 17:24:15.393 INFO  [main] com.example.demo.DemoApplication - Started DemoApplication in 2.235 seconds (process running for 3.054)
+2026-01-24 17:33:57.229 INFO  [main] com.example.demo.DemoApplication - Starting DemoApplication v0.0.1-SNAPSHOT using Java 21.0.9 with PID 36504 (D:\Work\ai\spring-ai\출판\소스\projects\ch12-mcp-server-stdio-internetsearch\build\libs\ch12-mcp-server-stdio-internetsearch-0.0.1-SNAPSHOT.jar started by blueskii in D:\Work\ai\spring-ai\출판\소스\projects\ch12-mcp-server-stdio-application)
+2026-01-24 17:33:57.233 INFO  [main] com.example.demo.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-24 17:33:57.941 WARN  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-01-24 17:33:57.943 WARN  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'serverAnnotatedBeanRegistry' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration$ServerMcpAnnotatedBeans] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-01-24 17:33:57.955 WARN  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.ai.mcp.server.annotation-scanner-org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerProperties' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-01-24 17:33:58.790 INFO  [main] o.s.a.m.s.c.a.McpServerAutoConfiguration - Enable tools capabilities, notification: true
+2026-01-24 17:33:58.791 INFO  [main] o.s.a.m.s.c.a.McpServerAutoConfiguration - Registered tools: 2
+2026-01-24 17:33:58.791 INFO  [main] o.s.a.m.s.c.a.McpServerAutoConfiguration - Enable resources capabilities, notification: true
+2026-01-24 17:33:58.791 INFO  [main] o.s.a.m.s.c.a.McpServerAutoConfiguration - Enable resources templates capabilities, notification: true
+2026-01-24 17:33:58.792 INFO  [main] o.s.a.m.s.c.a.McpServerAutoConfiguration - Enable prompts capabilities, notification: true
+2026-01-24 17:33:58.792 INFO  [main] o.s.a.m.s.c.a.McpServerAutoConfiguration - Enable completions capabilities
+2026-01-24 17:33:58.932 INFO  [pool-2-thread-1] i.m.server.McpAsyncServer - Client initialize request - Protocol: 2024-11-05, Capabilities: ClientCapabilities[experimental=null, roots=null, sampling=null, elicitation=null], Info: Implementation[name=spring-ai-mcp-client - ch12-mcp-server-stdio-internetsearch, title=ch12-mcp-server-stdio-internetsearch, version=1.0.0]
+2026-01-24 17:33:59.039 INFO  [main] com.example.demo.DemoApplication - Started DemoApplication in 2.2 seconds (process running for 2.929)
+2026-01-24 17:35:49.667 INFO  [main] com.example.demo.DemoApplication - Starting DemoApplication v0.0.1-SNAPSHOT using Java 21.0.9 with PID 23768 (D:\Work\ai\spring-ai\출판\소스\projects\ch12-mcp-server-stdio-internetsearch\build\libs\ch12-mcp-server-stdio-internetsearch-0.0.1-SNAPSHOT.jar started by blueskii in D:\Work\ai\spring-ai\출판\소스\projects\ch12-mcp-server-stdio-application)
+2026-01-24 17:35:49.669 INFO  [main] com.example.demo.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-24 17:35:50.364 WARN  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-01-24 17:35:50.366 WARN  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'serverAnnotatedBeanRegistry' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration$ServerMcpAnnotatedBeans] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-01-24 17:35:50.376 WARN  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.ai.mcp.server.annotation-scanner-org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerProperties' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-01-24 17:35:51.295 INFO  [main] o.s.a.m.s.c.a.McpServerAutoConfiguration - Enable tools capabilities, notification: true
+2026-01-24 17:35:51.297 INFO  [main] o.s.a.m.s.c.a.McpServerAutoConfiguration - Registered tools: 2
+2026-01-24 17:35:51.297 INFO  [main] o.s.a.m.s.c.a.McpServerAutoConfiguration - Enable resources capabilities, notification: true
+2026-01-24 17:35:51.297 INFO  [main] o.s.a.m.s.c.a.McpServerAutoConfiguration - Enable resources templates capabilities, notification: true
+2026-01-24 17:35:51.298 INFO  [main] o.s.a.m.s.c.a.McpServerAutoConfiguration - Enable prompts capabilities, notification: true
+2026-01-24 17:35:51.298 INFO  [main] o.s.a.m.s.c.a.McpServerAutoConfiguration - Enable completions capabilities
+2026-01-24 17:35:51.436 INFO  [pool-2-thread-1] i.m.server.McpAsyncServer - Client initialize request - Protocol: 2024-11-05, Capabilities: ClientCapabilities[experimental=null, roots=null, sampling=null, elicitation=null], Info: Implementation[name=spring-ai-mcp-client - ch12-mcp-server-stdio-internetsearch, title=ch12-mcp-server-stdio-internetsearch, version=1.0.0]
+2026-01-24 17:35:51.543 INFO  [main] com.example.demo.DemoApplication - Started DemoApplication in 2.252 seconds (process running for 3.06)
+2026-01-26 10:21:38.516 INFO  [main] com.example.demo.DemoApplication - Starting DemoApplication v0.0.1-SNAPSHOT using Java 21.0.9 with PID 13864 (D:\Work\ai\spring-ai\출판\소스\projects\ch12-mcp-server-stdio-internetsearch\build\libs\ch12-mcp-server-stdio-internetsearch-0.0.1-SNAPSHOT.jar started by blueskii in D:\Work\ai\spring-ai\출판\소스\projects\ch12-mcp-server-stdio-application)
+2026-01-26 10:21:38.518 INFO  [main] com.example.demo.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-26 10:21:39.222 WARN  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-01-26 10:21:39.224 WARN  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'serverAnnotatedBeanRegistry' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration$ServerMcpAnnotatedBeans] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-01-26 10:21:39.233 WARN  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.ai.mcp.server.annotation-scanner-org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerProperties' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-01-26 10:21:40.149 INFO  [main] o.s.a.m.s.c.a.McpServerAutoConfiguration - Enable tools capabilities, notification: true
+2026-01-26 10:21:40.150 INFO  [main] o.s.a.m.s.c.a.McpServerAutoConfiguration - Registered tools: 2
+2026-01-26 10:21:40.150 INFO  [main] o.s.a.m.s.c.a.McpServerAutoConfiguration - Enable resources capabilities, notification: true
+2026-01-26 10:21:40.151 INFO  [main] o.s.a.m.s.c.a.McpServerAutoConfiguration - Enable resources templates capabilities, notification: true
+2026-01-26 10:21:40.152 INFO  [main] o.s.a.m.s.c.a.McpServerAutoConfiguration - Enable prompts capabilities, notification: true
+2026-01-26 10:21:40.152 INFO  [main] o.s.a.m.s.c.a.McpServerAutoConfiguration - Enable completions capabilities
+2026-01-26 10:21:40.294 INFO  [pool-2-thread-1] i.m.server.McpAsyncServer - Client initialize request - Protocol: 2024-11-05, Capabilities: ClientCapabilities[experimental=null, roots=null, sampling=null, elicitation=null], Info: Implementation[name=spring-ai-mcp-client - ch12-mcp-server-stdio-internetsearch, title=ch12-mcp-server-stdio-internetsearch, version=1.0.0]
+2026-01-26 10:21:40.431 INFO  [main] com.example.demo.DemoApplication - Started DemoApplication in 2.29 seconds (process running for 3.057)
+2026-01-26 10:22:13.637 INFO  [boundedElastic-1] c.e.demo.tool.InternetSearchTools - 응답본문: {
+  "search_metadata": {
+    "id": "6976c1c17dcfbea66eaa8d98",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/7abb625055612a35/6976c1c17dcfbea66eaa8d98.json",
+    "pixel_position_endpoint": "https://serpapi.com/searches/7abb625055612a35/6976c1c17dcfbea66eaa8d98.json_with_pixel_position",
+    "created_at": "2026-01-26 01:22:09 UTC",
+    "processed_at": "2026-01-26 01:22:09 UTC",
+    "google_url": "https://www.google.com/search?q=%EC%9A%A9%EC%9D%B8+%EA%B8%B0%ED%9D%A5%EC%97%AD+%EC%A3%BC%EB%B3%80+%EB%8F%99%EB%AC%BC%EB%B3%91%EC%9B%90&oq=%EC%9A%A9%EC%9D%B8+%EA%B8%B0%ED%9D%A5%EC%97%AD+%EC%A3%BC%EB%B3%80+%EB%8F%99%EB%AC%BC%EB%B3%91%EC%9B%90&sourceid=chrome&ie=UTF-8",
+    "raw_html_file": "https://serpapi.com/searches/7abb625055612a35/6976c1c17dcfbea66eaa8d98.html",
+    "total_time_taken": 1.24
+  },
+  "search_parameters": {
+    "engine": "google",
+    "q": "용인 기흥역 주변 동물병원",
+    "google_domain": "google.com",
+    "device": "desktop"
+  },
+  "search_information": {
+    "query_displayed": "용인 기흥역 주변 동물병원",
+    "total_results": 57000,
+    "time_taken_displayed": 0.26,
+    "organic_results_state": "Results for exact spelling"
+  },
+  "local_map": {
+    "image": "https://www.google.com/maps/vt/data=4UJa-5sW6GX4xYIaCQYRwABOtRnHOkzITwwLHKpTwVjYeEYHpIb7gnHhTEqVynnEWVEbLD-rLcmLBG6DoH2hOEh2NJMWBaFrWOoBl-KJK5WX0cAgH_zQlc8T19aTBZF-5O8c1WIeyLBEBRrZ_TdiwLL2prFYehfE636klxdGufvC08iCRwgsbYJvA7wbzSdWytdNkmXqvVMIhNWxqTqdBw3yWr3ucbt7Tp0Bq6TtLAIZX1TtsLW82QnczvOTKV7Murgl8wNmi-iuN9hGy55Q9M5J3UEa-gFqBVy12sTX7l0rp5-_GS32Ss1TUF4slbnA_G4wUSO2rHQqGppRODujE69snVEPbkx4epyozvJujhbcTXDa0o9Oh876aa9Y8Zq_CIex2VK7-pcc6K3W40DHaI0JtgzZIav6fAYivQaaBsfVVG3GrVG6Syv5bkEboVIgDSS6psLhEP8_byoO_RHO9xbMEhcb1DlIi5ygxsI6gjeJH8uVV4A4yh15KITGmSygRiHPTzAUprjCcnqlSNugpXEPVttUyOxP8cSpJqi_9NcAsrZF2mo0MA7NixUFRSXoDgqDxt9O5lb7aBl1j89hvGCdCJspHNiu8Uiqql3KZLjpddoE4tK0EFZHHBjZC1517a1y3XEpFggkiFyZKh2XpmjdFReVuuj3-Mf4DGNO9Wl6eczVmCmLBxn7NWL3WgFZedj_92uvlAYjVNBdsoDDvYdyfas_OmtukKVsL7vB6q33vz-ns2FqXPkuLhm-M_KXDRhVb3ceRYZJX65gbn72V4ZQaUKecntSc9R9oWKIDHWnSl3C3U7KmZ6kxrkJ_2Ozhm3zEfZkGh7MG2D4DJ7n8Hu0lJJwl_bONJ6nY2TTjko73xCouv-AwcW5vkUfyyTXGRIpntbm5xWePfEilaL2qI4my9MRFkt5C7mNypTe4NIKNnZeXzwt5hcy7BFynbKjhusmORW_bvvWGs662nOlHQm-ivphBfRHvjXQw9_DqOizgzV8Z4_VbujD045hKlNywZpMDrNPXBEtk8I5Amg5QoW7wW30E78XPqzD9m7BjfFDiNtzzOelBws3PZuZjyO9q5jVuRXHwsalpILSxLz3ANtYjLbCj1T4R5e5bR1AZKDa59nfz7oigEiK50I8LDKjYNzM6SwFVLxg-xyNH6D2LgT89ptyaneeWIGfnUO10ctasHLqa9JDonFeoiwU8nTAemtJOQjKryhXKvoeteayumwiyZSJ5xIiqgKwG7H1sSWVAr3VyXmK3HlcQhSYCuqE482cvZGFk9D3FjXp9hL2ae14yeSWtQLGJWe2Xmat72fByHVcBDaeIvfUTrZtdup7UPZqo_J8l5InweLy64nzS0mRertzgpy6MBB9Liu5Mc6jIfjztuGeMoL-ClMn5E6cg3c",
+    "gps_coordinates": {
+      "latitude": 37.28634573,
+      "longitude": 127.1301842
+    }
+  },
+  "local_results": {
+    "places": [
+      {
+        "position": 1,
+        "rating": 4.7,
+        "reviews": 72,
+        "reviews_original": "(72)",
+        "lsig": "AB86z5U0K5OkZplcLvrYTVt0D4me",
+        "links": {
+          "website": "https://hyundaiah.modoo.at/",
+          "directions": "https://www.google.com/maps/dir//South+Korea,+Gyeonggi-do,+Yongin-si,+Giheung-gu,+Sanggal-ro,+31+%ED%98%84%EB%8C%80%EB%8F%99%EB%AC%BC%EB%B3%91%EC%9B%90/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x357b5abf9f3267a5:0x81b6a0d19bd82af3?sa=X&ved=2ahUKEwiqx6KwhaiSAxV9JEQIHaYqBEMQ48ADegQIIxAA"
+        },
+        "place_id": "9346834898777287411",
+        "place_id_search": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ludocid=9346834898777287411&q=%EC%9A%A9%EC%9D%B8+%EA%B8%B0%ED%9D%A5%EC%97%AD+%EC%A3%BC%EB%B3%80+%EB%8F%99%EB%AC%BC%EB%B3%91%EC%9B%90",
+        "gps_coordinates": {
+          "latitude": 37.26915,
+          "longitude": 127.10824
+        },
+        "title": "현대동물병원",
+        "type": "동물병원",
+        "years_in_business": "10+ years in business",
+        "address": "31 Sanggal-ro",
+        "phone": "+82 31-285-6334",
+        "hours": "Open · Closes 7:30 PM"
+      },
+      {
+        "position": 2,
+        "rating": 4.4,
+        "reviews": 45,
+        "reviews_original": "(45)",
+        "lsig": "AB86z5VaPiEtJR3Ftz2WPg_3lQRk",
+        "links": {
+          "directions": "https://www.google.com/maps/dir//South+Korea,+Gyeonggi-do,+Yongin-si,+Giheung-gu,+Gugal-dong,+Gugal-ro,+53+24%EC%8B%9C+%EB%8F%99%EB%AC%BC%EB%B3%91%EC%9B%90/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x357b5a8e6a4dcb8b:0x9733059f509e2b29?sa=X&ved=2ahUKEwiqx6KwhaiSAxV9JEQIHaYqBEMQ48ADegQIIRAA"
+        },
+        "place_id": "10895058105349843753",
+        "place_id_search": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ludocid=10895058105349843753&q=%EC%9A%A9%EC%9D%B8+%EA%B8%B0%ED%9D%A5%EC%97%AD+%EC%A3%BC%EB%B3%80+%EB%8F%99%EB%AC%BC%EB%B3%91%EC%9B%90",
+        "gps_coordinates": {
+          "latitude": 37.279064,
+          "longitude": 127.11101
+        },
+        "title": "24시 동물병원",
+        "type": "동물병원",
+        "years_in_business": "10+ years in business",
+        "address": "53 Gugal-ro, Gugal-dong",
+        "phone": "+82 31-281-7585",
+        "hours": "Open · Closes 10:30 PM"
+      },
+      {
+        "position": 3,
+        "rating": 4.5,
+        "reviews": 69,
+        "reviews_original": "(69)",
+        "lsig": "AB86z5VnvxsREw4pmzYFgLgBrATy",
+        "links": {
+          "website": "https://blog.naver.com/blessamcblog",
+          "directions": "https://www.google.com/maps/dir//South+Korea,+Gyeonggi-do,+Yongin-si,+Giheung-gu,+Dongbaek+3-ro+11beon-gil,+9+KR+24%EC%8B%9C+%EB%B8%94%EB%A0%88%EC%8A%A4%EB%8F%99%EB%AC%BC%EB%A9%94%EB%94%94%EC%BB%AC%EC%84%BC%ED%84%B0/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x357b51bb3d73633d:0x8b568b79e5e4ba91?sa=X&ved=2ahUKEwiqx6KwhaiSAxV9JEQIHaYqBEMQ48ADegQIIhAA"
+        },
+        "place_id": "10040365774933375633",
+        "place_id_search": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ludocid=10040365774933375633&q=%EC%9A%A9%EC%9D%B8+%EA%B8%B0%ED%9D%A5%EC%97%AD+%EC%A3%BC%EB%B3%80+%EB%8F%99%EB%AC%BC%EB%B3%91%EC%9B%90",
+        "gps_coordinates": {
+          "latitude": 37.26969,
+          "longitude": 127.15288
+        },
+        "title": "24시 블레스동물메디컬센터",
+        "type": "동물병원",
+        "years_in_business": "5+ years in business",
+        "address": "Dongbaek 3-ro 11beon-gil, 9 KR",
+        "phone": "+82 31-546-0942",
+        "hours": "Open 24 hours"
+      }
+    ],
+    "more_locations_link": "https://www.google.com/search?q=%EC%9A%A9%EC%9D%B8+%EA%B8%B0%ED%9D%A5%EC%97%AD+%EC%A3%BC%EB%B3%80+%EB%8F%99%EB%AC%BC%EB%B3%91%EC%9B%90&sca_esv=6e6ec1b702c00a9e&udm=1&lsack=wsF2aareGP3IkPIPptWQmAQ&sa=X&ved=2ahUKEwiqx6KwhaiSAxV9JEQIHaYqBEMQjGp6BAgwEAA"
+  },
+  "related_questions": [
+    {
+      "question": "동물병원 하루 입원비?",
+      "type": "featured_snippet",
+      "snippet": "🔎 조사에 따르면 반려견 하루 입원비는 평균 6만5040원이었습니다. 하지만 실제 병원별 가격은 1만 원에서 33만 원까지 매우 넓게 분포했습니다. 고양이 입원비 역시 1만 원에서 20만 원까지 차이를 보였습니다. 💡 정밀 검사가 필요한 경우 비용은 더 크게 벌어졌습니다.",
+      "title": "\"진찰·입원비부터 CT·초음파 비용까지\" 동물병원 진료비 현황 - 블로그",
+      "date": "Dec 25, 2025",
+      "link": "https://blog.naver.com/PostView.naver?blogId=etoday12&logNo=224121324583&redirect=Dlog#:~:text=%F0%9F%94%8E%20%EC%A1%B0%EC%82%AC%EC%97%90%20%EB%94%B0%EB%A5%B4%EB%A9%B4%20%EB%B0%98%EB%A0%A4%EA%B2%AC,%EC%9B%90%EA%B9%8C%EC%A7%80%20%EC%B0%A8%EC%9D%B4%EB%A5%BC%20%EB%B3%B4%EC%98%80%EC%8A%B5%EB%8B%88%EB%8B%A4.&text=%F0%9F%92%A1%20%EC%A0%95%EB%B0%80%20%EA%B2%80%EC%82%AC%EA%B0%80%20%ED%95%84%EC%9A%94%ED%95%9C%20%EA%B2%BD%EC%9A%B0%20%EB%B9%84%EC%9A%A9%EC%9D%80%20%EB%8D%94%20%ED%81%AC%EA%B2%8C%20%EB%B2%8C%EC%96%B4%EC%A1%8C%EC%8A%B5%EB%8B%88%EB%8B%A4.",
+      "displayed_link": "https://blog.naver.com › PostView",
+      "next_page_token": "eyJvbnMiOiIxMDA0MSIsImZjIjoiRXFFQkNtSkJUVzR6TFhsU2JFVkJjR2MyVlVWU1RIcHVkekZZU2xWU1duUmlTVlJtV1V0cFpqRTNXbTAyTXpBeVJXZHpPV2h0VTJaSGNGTTFiRXBxTlRoSVVIRkphV2x6UzFkdVIxTnFRa3BZTldwUFRHaDRNWFJsWTNwQ2JXSk1ZMUV5Y1VnMlp4SVhkM05HTW1GaGNtVkhVRE5KYTFCSlVIQjBWMUZ0UVZFYUlrRktTMHhHYlVwc1RVNVpTek5uWkZOcVgyNTBkVzVGU2w4NFlsSmlORkZNWjJjIiwiZmN2IjoiMyIsImVpIjoid3NGMmFhcmVHUDNJa1BJUHB0V1FtQVEiLCJxYyI6IkNpWHNtcW5zbmJnZzZyaXc3WjJsN0pldElPeWp2T3V6Z0NEcmo1bnJyTHdnNjdPUjdKdVFFQWw5ZXJUbFBnIiwicXVlc3Rpb24iOiLrj5nrrLzrs5Hsm5Ag7ZWY66OoIOyeheybkOu5hD8iLCJsayI6IkdoN3JqNW5yckx3ZzY3T1I3SnVRSU8yVm1PdWpxQ0Rzbm9Yc201RHJ1WVEiLCJicyI6ImMtTnk1Wko3M1RfejlabzlyemRQZkRON2dzTGJxVE5lTDE2aDhHWmVLNUQzZW1lTHZjUmVmU01GS2FnaUJSeXF1RENNYWUxNTI3am1kWGZIbTlZWkNxX243TGFYT0ZlT3hSZzBWVngyWEZJb3hyemF2T0QxMGkydnU2YTgzalRWWHVJc281R3NsRFNxRVhBVkNrQWxYUFpjMHFqTzZPOTh0WDJCd3B1T0dXX21icldYbU9XTmFRQ0tFZ0ZHQUEiLCJpZCI6ImZjX3dzRjJhYXJlR1AzSWtQSVBwdFdRbUFRXzMifQ==",
+      "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google_related_questions&google_domain=google.com&next_page_token=eyJvbnMiOiIxMDA0MSIsImZjIjoiRXFFQkNtSkJUVzR6TFhsU2JFVkJjR2MyVlVWU1RIcHVkekZZU2xWU1duUmlTVlJtV1V0cFpqRTNXbTAyTXpBeVJXZHpPV2h0VTJaSGNGTTFiRXBxTlRoSVVIRkphV2x6UzFkdVIxTnFRa3BZTldwUFRHaDRNWFJsWTNwQ2JXSk1ZMUV5Y1VnMlp4SVhkM05HTW1GaGNtVkhVRE5KYTFCSlVIQjBWMUZ0UVZFYUlrRktTMHhHYlVwc1RVNVpTek5uWkZOcVgyNTBkVzVGU2w4NFlsSmlORkZNWjJjIiwiZmN2IjoiMyIsImVpIjoid3NGMmFhcmVHUDNJa1BJUHB0V1FtQVEiLCJxYyI6IkNpWHNtcW5zbmJnZzZyaXc3WjJsN0pldElPeWp2T3V6Z0NEcmo1bnJyTHdnNjdPUjdKdVFFQWw5ZXJUbFBnIiwicXVlc3Rpb24iOiLrj5nrrLzrs5Hsm5Ag7ZWY66OoIOyeheybkOu5hD8iLCJsayI6IkdoN3JqNW5yckx3ZzY3T1I3SnVRSU8yVm1PdWpxQ0Rzbm9Yc201RHJ1WVEiLCJicyI6ImMtTnk1Wko3M1RfejlabzlyemRQZkRON2dzTGJxVE5lTDE2aDhHWmVLNUQzZW1lTHZjUmVmU01GS2FnaUJSeXF1RENNYWUxNTI3am1kWGZIbTlZWkNxX243TGFYT0ZlT3hSZzBWVngyWEZJb3hyemF2T0QxMGkydnU2YTgzalRWWHVJc281R3NsRFNxRVhBVkNrQWxYUFpjMHFqTzZPOTh0WDJCd3B1T0dXX21icldYbU9XTmFRQ0tFZ0ZHQUEiLCJpZCI6ImZjX3dzRjJhYXJlR1AzSWtQSVBwdFdRbUFRXzMifQ%3D%3D"
+    },
+    {
+      "question": "동물병원 테크니션 뜻?",
+      "type": "featured_snippet",
+      "snippet": "수의테크니션은 동물병원이나 그 외 관련된 기관에서 수의사의 지도하에 동물의 간호 또는 진료를 보조하는 일을 합니다.",
+      "title": "직업백과 - 커리어넷",
+      "link": "https://www.career.go.kr/cloud/m/job/view?seq=10048#:~:text=%EC%88%98%EC%9D%98%ED%85%8C%ED%81%AC%EB%8B%88%EC%85%98%EC%9D%80%20%EB%8F%99%EB%AC%BC%EB%B3%91%EC%9B%90,%EB%B3%B4%EC%A1%B0%ED%95%98%EB%8A%94%20%EC%9D%BC%EC%9D%84%20%ED%95%A9%EB%8B%88%EB%8B%A4.",
+      "displayed_link": "https://www.career.go.kr › cloud › job › view",
+      "source_logo": "https://serpapi.com/searches/6976c1c17dcfbea66eaa8d98/images/877cadb3cf616c8b55af7a202a003dce9bb89a98c18e767b010ef45a732733ce.png",
+      "next_page_token": "eyJvbnMiOiIxMDA0MSIsImZjIjoiRXFFQkNtSkJUVzR6TFhsU2JFVkJjR2MyVlVWU1RIcHVkekZZU2xWU1duUmlTVlJtV1V0cFpqRTNXbTAyTXpBeVJXZHpPV2h0VTJaSGNGTTFiRXBxTlRoSVVIRkphV2x6UzFkdVIxTnFRa3BZTldwUFRHaDRNWFJsWTNwQ2JXSk1ZMUV5Y1VnMlp4SVhkM05HTW1GaGNtVkhVRE5KYTFCSlVIQjBWMUZ0UVZFYUlrRktTMHhHYlVwc1RVNVpTek5uWkZOcVgyNTBkVzVGU2w4NFlsSmlORkZNWjJjIiwiZmN2IjoiMyIsImVpIjoid3NGMmFhcmVHUDNJa1BJUHB0V1FtQVEiLCJxYyI6IkNpWHNtcW5zbmJnZzZyaXc3WjJsN0pldElPeWp2T3V6Z0NEcmo1bnJyTHdnNjdPUjdKdVFFQWw5ZXJUbFBnIiwicXVlc3Rpb24iOiLrj5nrrLzrs5Hsm5Ag7YWM7YGs64uI7IWYIOucuz8iLCJsayI6IkdoN3JqNW5yckx3ZzY3T1I3SnVRSU8yRmpPMkJyT3VMaU95Rm1DRHJuTHMiLCJicyI6ImMtTnk1Wko3M1RfejlabzlyemRQZkRON2dzTGJxVE5lTDE2aDhHWmVLNUQzZW1lTHZjUmVmU01GS2FnaUJSeXF1RENNYWUxNTI3am1kWGZIbTlZWkNxX243TGFYT0ZlT3hSZzBWVngyWEZJb3hyemF2T0QxMGkydnU2YTgzalRWWHVJc281R3NsRFNxRVhBVkNrQWxYUFpjMHFqTzZPOTh0WDJCd3B1T0dXX21icldYbU9XTmFRQ0tFZ0ZHQUEiLCJpZCI6ImZjX3dzRjJhYXJlR1AzSWtQSVBwdFdRbUFRXzMifQ==",
+      "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google_related_questions&google_domain=google.com&next_page_token=eyJvbnMiOiIxMDA0MSIsImZjIjoiRXFFQkNtSkJUVzR6TFhsU2JFVkJjR2MyVlVWU1RIcHVkekZZU2xWU1duUmlTVlJtV1V0cFpqRTNXbTAyTXpBeVJXZHpPV2h0VTJaSGNGTTFiRXBxTlRoSVVIRkphV2x6UzFkdVIxTnFRa3BZTldwUFRHaDRNWFJsWTNwQ2JXSk1ZMUV5Y1VnMlp4SVhkM05HTW1GaGNtVkhVRE5KYTFCSlVIQjBWMUZ0UVZFYUlrRktTMHhHYlVwc1RVNVpTek5uWkZOcVgyNTBkVzVGU2w4NFlsSmlORkZNWjJjIiwiZmN2IjoiMyIsImVpIjoid3NGMmFhcmVHUDNJa1BJUHB0V1FtQVEiLCJxYyI6IkNpWHNtcW5zbmJnZzZyaXc3WjJsN0pldElPeWp2T3V6Z0NEcmo1bnJyTHdnNjdPUjdKdVFFQWw5ZXJUbFBnIiwicXVlc3Rpb24iOiLrj5nrrLzrs5Hsm5Ag7YWM7YGs64uI7IWYIOucuz8iLCJsayI6IkdoN3JqNW5yckx3ZzY3T1I3SnVRSU8yRmpPMkJyT3VMaU95Rm1DRHJuTHMiLCJicyI6ImMtTnk1Wko3M1RfejlabzlyemRQZkRON2dzTGJxVE5lTDE2aDhHWmVLNUQzZW1lTHZjUmVmU01GS2FnaUJSeXF1RENNYWUxNTI3am1kWGZIbTlZWkNxX243TGFYT0ZlT3hSZzBWVngyWEZJb3hyemF2T0QxMGkydnU2YTgzalRWWHVJc281R3NsRFNxRVhBVkNrQWxYUFpjMHFqTzZPOTh0WDJCd3B1T0dXX21icldYbU9XTmFRQ0tFZ0ZHQUEiLCJpZCI6ImZjX3dzRjJhYXJlR1AzSWtQSVBwdFdRbUFRXzMifQ%3D%3D"
+    },
+    {
+      "question": "동물병원 고르는법?",
+      "type": "featured_snippet",
+      "title": "수의사가 알려주는 좋은 동물병원 고르는 방법 - YouTube",
+      "link": "https://www.youtube.com/shorts/ogCE57NdWME",
+      "displayed_link": "https://www.youtube.com · 개알남 수의사 이세원",
+      "source_logo": "https://serpapi.com/searches/6976c1c17dcfbea66eaa8d98/images/877cadb3cf616c8b55af7a202a003dceef24fafccb0c01d718b614e1e8c87407.png",
+      "next_page_token": "eyJvbnMiOiIyNjc5IiwiZmMiOiJFdUlDQ3FJQ1FVMXVNeTE1VTBsTFNXcHBNRU15ZG05S1J6RXpkSFJKZGtFMU1sZDFPSFI0UjJsR1QyOTVZemRIWTJNM0xUUkpOVmhZWjJodU1GcG5hV2RtV0d0NFZHUXdabmROWm5CV1dXWlZMVGxUVlZBeVprbzVUelZmT0ZKeFRHNXdORW81VmtOUlNVMUhja2xLTm1ScFlqTlpXbVI2VTBOaldqWnRha1ZHU2pkS2IzcEROVmhWZG5GTVExWnRNek4xZVMxVlRtbHhhR2hRZW1nNE1FUTFhR0UxYTNOVlVIVlZNbEJDVFdRMFQweE5lRFZxWjFWQlQxZHRjWFpyVVZCeFlXNXlibEZ5Vm5JelRrWjJabnA2VmpSQmEwODNZblZoU21zeU9XcDFhRzlyUkZkU2NWZzVOMUpGTjJKaFkwMUhaRGRIVFZoTFZXZFZaMlZQUmpndFdreFZWVmxZZUZaallWVkhXR0l4Vm5Sd01scHNUbHBpVUZsRlZGRm5WV2h2YmxrMlNVRVNGM2R6UmpKaFlYSmxSMUF6U1d0UVNWQndkRmRSYlVGUkdpSkJTa3RNUm0xS1RHRm9iRlJQY2t4eU9WWXhRakE0WjFGck1ucEVVVEZSWjFSMyIsImZjdiI6IjMiLCJlaSI6IndzRjJhYXJlR1AzSWtQSVBwdFdRbUFRIiwicWMiOiJDaVhzbXFuc25iZ2c2cml3N1oybDdKZXRJT3lqdk91emdDRHJqNW5yckx3ZzY3T1I3SnVRRUFsOWVyVGxQZyIsInF1ZXN0aW9uIjoi64+Z66y867OR7JuQIOqzoOultOuKlOuylT8iLCJsayI6IkdodnJqNW5yckx3ZzY3T1I3SnVRSU9xem9PdWx0T3VLbENEcnNwVSIsImJzIjoiYy1OeTVaSjczVF96OVpvOXJ6ZFBmRE43Z3NMYnFUTmVMMTZoOEdaZUs1RDNlbWVMdmNSZWZTTUZLYWdpQlJ5cXVEQ01hZTE1MjdqbWRYZkhtOVlaQ3FfbjdMYVhPRmVPeFJnMFZWeDJYRklveHJ6YXZPRDEwaTJ2dTZhODNqVFZYdUlzbzVHc2xEU3FFWEFWQ2tBbFhQWmMwcWpPNk85OHRYMkJ3cHVPR1dfbWJyV1htT1dOYVFDS0VnRkdBQSIsImlkIjoiZmNfd3NGMmFhcmVHUDNJa1BJUHB0V1FtQVFfNCJ9",
+      "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google_related_questions&google_domain=google.com&next_page_token=eyJvbnMiOiIyNjc5IiwiZmMiOiJFdUlDQ3FJQ1FVMXVNeTE1VTBsTFNXcHBNRU15ZG05S1J6RXpkSFJKZGtFMU1sZDFPSFI0UjJsR1QyOTVZemRIWTJNM0xUUkpOVmhZWjJodU1GcG5hV2RtV0d0NFZHUXdabmROWm5CV1dXWlZMVGxUVlZBeVprbzVUelZmT0ZKeFRHNXdORW81VmtOUlNVMUhja2xLTm1ScFlqTlpXbVI2VTBOaldqWnRha1ZHU2pkS2IzcEROVmhWZG5GTVExWnRNek4xZVMxVlRtbHhhR2hRZW1nNE1FUTFhR0UxYTNOVlVIVlZNbEJDVFdRMFQweE5lRFZxWjFWQlQxZHRjWFpyVVZCeFlXNXlibEZ5Vm5JelRrWjJabnA2VmpSQmEwODNZblZoU21zeU9XcDFhRzlyUkZkU2NWZzVOMUpGTjJKaFkwMUhaRGRIVFZoTFZXZFZaMlZQUmpndFdreFZWVmxZZUZaallWVkhXR0l4Vm5Sd01scHNUbHBpVUZsRlZGRm5WV2h2YmxrMlNVRVNGM2R6UmpKaFlYSmxSMUF6U1d0UVNWQndkRmRSYlVGUkdpSkJTa3RNUm0xS1RHRm9iRlJQY2t4eU9WWXhRakE0WjFGck1ucEVVVEZSWjFSMyIsImZjdiI6IjMiLCJlaSI6IndzRjJhYXJlR1AzSWtQSVBwdFdRbUFRIiwicWMiOiJDaVhzbXFuc25iZ2c2cml3N1oybDdKZXRJT3lqdk91emdDRHJqNW5yckx3ZzY3T1I3SnVRRUFsOWVyVGxQZyIsInF1ZXN0aW9uIjoi64%2BZ66y867OR7JuQIOqzoOultOuKlOuylT8iLCJsayI6IkdodnJqNW5yckx3ZzY3T1I3SnVRSU9xem9PdWx0T3VLbENEcnNwVSIsImJzIjoiYy1OeTVaSjczVF96OVpvOXJ6ZFBmRE43Z3NMYnFUTmVMMTZoOEdaZUs1RDNlbWVMdmNSZWZTTUZLYWdpQlJ5cXVEQ01hZTE1MjdqbWRYZkhtOVlaQ3FfbjdMYVhPRmVPeFJnMFZWeDJYRklveHJ6YXZPRDEwaTJ2dTZhODNqVFZYdUlzbzVHc2xEU3FFWEFWQ2tBbFhQWmMwcWpPNk85OHRYMkJ3cHVPR1dfbWJyV1htT1dOYVFDS0VnRkdBQSIsImlkIjoiZmNfd3NGMmFhcmVHUDNJa1BJUHB0V1FtQVFfNCJ9"
+    },
+    {
+      "question": "동물병원 평균 수익?",
+      "type": "featured_snippet",
+      "snippet": "국내 동물병원의 평균 월매출이 약 3310만원인 것으로 나타났다. 국세청이 국세통계포털(TASIS)을 통해 최근 발표한 '통계로 보는 생활업종'에 따르면, 귀속연도 2023년 기준 전국 개인사업자 동물병원의 평균 연 매출이 3억 9,728만원(월평균 3,310만원)으로 집계됐다.",
+      "title": "개인 동물병원 평균 월매출 3300만원 - 데일리벳",
+      "date": "May 30, 2025",
+      "link": "https://www.dailyvet.co.kr/news/practice/247527#:~:text=%EA%B5%AD%EB%82%B4%20%EB%8F%99%EB%AC%BC%EB%B3%91%EC%9B%90%EC%9D%98%20%ED%8F%89%EA%B7%A0%20%EC%9B%94%EB%A7%A4%EC%B6%9C%EC%9D%B4%20%EC%95%BD%203310,3%2C310%EB%A7%8C%EC%9B%90)%EC%9C%BC%EB%A1%9C%20%EC%A7%91%EA%B3%84%EB%90%90%EB%8B%A4.",
+      "displayed_link": "https://www.dailyvet.co.kr › news › practice",
+      "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEwQY8GxCiKIkxqNiNSl2oCc5mBdqgiVgI3vfA0IMzaQ&s",
+      "source_logo": "https://serpapi.com/searches/6976c1c17dcfbea66eaa8d98/images/877cadb3cf616c8b55af7a202a003dceeb07de852f61c37a325f5de9fe3f562e.png",
+      "next_page_token": "eyJvbnMiOiIyNjc5IiwiZmMiOiJFdUlDQ3FJQ1FVMXVNeTE1VTBsTFNXcHBNRU15ZG05S1J6RXpkSFJKZGtFMU1sZDFPSFI0UjJsR1QyOTVZemRIWTJNM0xUUkpOVmhZWjJodU1GcG5hV2RtV0d0NFZHUXdabmROWm5CV1dXWlZMVGxUVlZBeVprbzVUelZmT0ZKeFRHNXdORW81VmtOUlNVMUhja2xLTm1ScFlqTlpXbVI2VTBOaldqWnRha1ZHU2pkS2IzcEROVmhWZG5GTVExWnRNek4xZVMxVlRtbHhhR2hRZW1nNE1FUTFhR0UxYTNOVlVIVlZNbEJDVFdRMFQweE5lRFZxWjFWQlQxZHRjWFpyVVZCeFlXNXlibEZ5Vm5JelRrWjJabnA2VmpSQmEwODNZblZoU21zeU9XcDFhRzlyUkZkU2NWZzVOMUpGTjJKaFkwMUhaRGRIVFZoTFZXZFZaMlZQUmpndFdreFZWVmxZZUZaallWVkhXR0l4Vm5Sd01scHNUbHBpVUZsRlZGRm5WV2h2YmxrMlNVRVNGM2R6UmpKaFlYSmxSMUF6U1d0UVNWQndkRmRSYlVGUkdpSkJTa3RNUm0xS1RHRm9iRlJQY2t4eU9WWXhRakE0WjFGck1ucEVVVEZSWjFSMyIsImZjdiI6IjMiLCJlaSI6IndzRjJhYXJlR1AzSWtQSVBwdFdRbUFRIiwicWMiOiJDaVhzbXFuc25iZ2c2cml3N1oybDdKZXRJT3lqdk91emdDRHJqNW5yckx3ZzY3T1I3SnVRRUFsOWVyVGxQZyIsInF1ZXN0aW9uIjoi64+Z66y867OR7JuQIO2Pieq3oCDsiJjsnbU/IiwibGsiOiJHaHZyajVucnJMd2c2N09SN0p1UUlPMlBpZXEzb0NEc2lKanNuYlUiLCJicyI6ImMtTnk1Wko3M1RfejlabzlyemRQZkRON2dzTGJxVE5lTDE2aDhHWmVLNUQzZW1lTHZjUmVmU01GS2FnaUJSeXF1RENNYWUxNTI3am1kWGZIbTlZWkNxX243TGFYT0ZlT3hSZzBWVngyWEZJb3hyemF2T0QxMGkydnU2YTgzalRWWHVJc281R3NsRFNxRVhBVkNrQWxYUFpjMHFqTzZPOTh0WDJCd3B1T0dXX21icldYbU9XTmFRQ0tFZ0ZHQUEiLCJpZCI6ImZjX3dzRjJhYXJlR1AzSWtQSVBwdFdRbUFRXzQifQ==",
+      "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google_related_questions&google_domain=google.com&next_page_token=eyJvbnMiOiIyNjc5IiwiZmMiOiJFdUlDQ3FJQ1FVMXVNeTE1VTBsTFNXcHBNRU15ZG05S1J6RXpkSFJKZGtFMU1sZDFPSFI0UjJsR1QyOTVZemRIWTJNM0xUUkpOVmhZWjJodU1GcG5hV2RtV0d0NFZHUXdabmROWm5CV1dXWlZMVGxUVlZBeVprbzVUelZmT0ZKeFRHNXdORW81VmtOUlNVMUhja2xLTm1ScFlqTlpXbVI2VTBOaldqWnRha1ZHU2pkS2IzcEROVmhWZG5GTVExWnRNek4xZVMxVlRtbHhhR2hRZW1nNE1FUTFhR0UxYTNOVlVIVlZNbEJDVFdRMFQweE5lRFZxWjFWQlQxZHRjWFpyVVZCeFlXNXlibEZ5Vm5JelRrWjJabnA2VmpSQmEwODNZblZoU21zeU9XcDFhRzlyUkZkU2NWZzVOMUpGTjJKaFkwMUhaRGRIVFZoTFZXZFZaMlZQUmpndFdreFZWVmxZZUZaallWVkhXR0l4Vm5Sd01scHNUbHBpVUZsRlZGRm5WV2h2YmxrMlNVRVNGM2R6UmpKaFlYSmxSMUF6U1d0UVNWQndkRmRSYlVGUkdpSkJTa3RNUm0xS1RHRm9iRlJQY2t4eU9WWXhRakE0WjFGck1ucEVVVEZSWjFSMyIsImZjdiI6IjMiLCJlaSI6IndzRjJhYXJlR1AzSWtQSVBwdFdRbUFRIiwicWMiOiJDaVhzbXFuc25iZ2c2cml3N1oybDdKZXRJT3lqdk91emdDRHJqNW5yckx3ZzY3T1I3SnVRRUFsOWVyVGxQZyIsInF1ZXN0aW9uIjoi64%2BZ66y867OR7JuQIO2Pieq3oCDsiJjsnbU%2FIiwibGsiOiJHaHZyajVucnJMd2c2N09SN0p1UUlPMlBpZXEzb0NEc2lKanNuYlUiLCJicyI6ImMtTnk1Wko3M1RfejlabzlyemRQZkRON2dzTGJxVE5lTDE2aDhHWmVLNUQzZW1lTHZjUmVmU01GS2FnaUJSeXF1RENNYWUxNTI3am1kWGZIbTlZWkNxX243TGFYT0ZlT3hSZzBWVngyWEZJb3hyemF2T0QxMGkydnU2YTgzalRWWHVJc281R3NsRFNxRVhBVkNrQWxYUFpjMHFqTzZPOTh0WDJCd3B1T0dXX21icldYbU9XTmFRQ0tFZ0ZHQUEiLCJpZCI6ImZjX3dzRjJhYXJlR1AzSWtQSVBwdFdRbUFRXzQifQ%3D%3D"
+    }
+  ],
+  "organic_results": [
+    {
+      "position": 1,
+      "title": "용인 기흥역 기흥나무동물병원 추천(과잉진료 없고 친절한 곳)",
+      "link": "https://blog.naver.com/ggu2ya/223583690973",
+      "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://blog.naver.com/ggu2ya/223583690973&ved=2ahUKEwiqx6KwhaiSAxV9JEQIHaYqBEMQFnoECB0QAQ",
+      "displayed_link": "https://blog.naver.com › ...",
+      "thumbnail": "https://serpapi.com/searches/6976c1c17dcfbea66eaa8d98/images/91fb9f2f9107e4546c05ccab07845c2b669097e8b1ebe7015115ffd642b4c645.jpeg",
+      "date": "Sep 14, 2024",
+      "snippet": "카테고리 이동 쏭꾸리와 김꾸이의 행복여행 · 기흥나무동물병원 · 주소 : 경기 용인시 기흥구 기흥로 12 · 유성빌딩 1층(구갈동 374-1) · * 기흥역 1 ...",
+      "snippet_highlighted_words": [
+        "기흥나무동물병원"
+      ],
+      "source": "Naver Blog"
+    },
+    {
+      "position": 2,
+      "title": "용인 현대동물병원 (@hyundai_ah_)",
+      "link": "https://www.instagram.com/hyundai_ah_/",
+      "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.instagram.com/hyundai_ah_/&ved=2ahUKEwiqx6KwhaiSAxV9JEQIHaYqBEMQFnoECCQQAQ",
+      "displayed_link": "460+ followers",
+      "thumbnail": "https://serpapi.com/searches/6976c1c17dcfbea66eaa8d98/images/91fb9f2f9107e4546c05ccab07845c2b5c1f9622847b1a6d18ce509288e70b02.jpeg",
+      "favicon": "https://serpapi.com/searches/6976c1c17dcfbea66eaa8d98/images/91fb9f2f9107e4546c05ccab07845c2b0794ff3a59f7693a45a246203b972a7e.png",
+      "snippet": "경기 용인시 기흥구 상갈로 31 1층 & 2층 365일 연중 무휴 진료실 분리, Cat Friendly Clinic 긍정강화 피어프리 아로마테라피 케어 미용 ⬇진료|종합검진|치과 ...",
+      "snippet_highlighted_words": [
+        "경기 용인시 기흥구 상갈로 31 1층 & 2층"
+      ],
+      "source": "Instagram · hyundai_ah_"
+    },
+    {
+      "position": 3,
+      "title": "[용인시 기흥구] 용인시 기흥구 동물병원 리스트",
+      "link": "https://blog.naver.com/petinpet/221041592968",
+      "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://blog.naver.com/petinpet/221041592968&ved=2ahUKEwiqx6KwhaiSAxV9JEQIHaYqBEMQFnoECBsQAQ",
+      "displayed_link": "https://blog.naver.com › petinpet",
+      "date": "Jul 1, 2017",
+      "snippet": "1. Dr.J동물병원. 용인시 기흥구 흥덕2로 87번길 18 ,D동 107호(영덕동). 215-7975. 2. 보정동물병원. 용인시 기흥구 보정로 32(보정동). 898-3708.",
+      "snippet_highlighted_words": [
+        "1. Dr.J동물병원. 용인시 기흥구 흥덕2로 87번길 18 ,D동 107호"
+      ],
+      "source": "Naver Blog"
+    },
+    {
+      "position": 4,
+      "title": "쿨펫 동물병원 동백점 [용인시 기흥구]",
+      "link": "https://walpet.kr/shop/item.php?it_id=1579765794",
+      "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://walpet.kr/shop/item.php%3Fit_id%3D1579765794&ved=2ahUKEwiqx6KwhaiSAxV9JEQIHaYqBEMQFnoECFMQAQ",
+      "displayed_link": "https://walpet.kr › shop › item",
+      "thumbnail": "https://serpapi.com/searches/6976c1c17dcfbea66eaa8d98/images/91fb9f2f9107e4546c05ccab07845c2be99befab493799f158177117f4d1f8b2.jpeg",
+      "favicon": "https://serpapi.com/searches/6976c1c17dcfbea66eaa8d98/images/91fb9f2f9107e4546c05ccab07845c2b2d95406db8d0043a46d1fe3c18562ece.png",
+      "snippet": "쿨펫 동물병원 동백점 [용인시 기흥구] 요약정보 및 구매. 오랜임상경험ㅣ예방의학전문ㅣ노령견전문. 상품 선택옵션 2 개, 추가옵션 0 개. 고객평점 별5개 ...",
+      "snippet_highlighted_words": [
+        "쿨펫 동물병원 동백점"
+      ],
+      "source": "왈펫"
+    },
+    {
+      "position": 5,
+      "title": "닥터펫 동물의료센터 ( 경기도 용인시 기흥구 )",
+      "link": "http://duli.co.kr/web/splus/kmap/view.php?sigun=6410000&gugun=4050000&keyno=421&keyname=%EB%8B%A5%ED%84%B0%ED%8E%AB+%EB%8F%99%EB%AC%BC%EC%9D%98%EB%A3%8C%EC%84%BC%ED%84%B0&keylink=563000001020240001",
+      "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=http://duli.co.kr/web/splus/kmap/view.php%3Fsigun%3D6410000%26gugun%3D4050000%26keyno%3D421%26keyname%3D%25EB%258B%25A5%25ED%2584%25B0%25ED%258E%25AB%2B%25EB%258F%2599%25EB%25AC%25BC%25EC%259D%2598%25EB%25A3%258C%25EC%2584%25BC%25ED%2584%25B0%26keylink%3D563000001020240001&ved=2ahUKEwiqx6KwhaiSAxV9JEQIHaYqBEMQFnoECFIQAQ",
+      "displayed_link": "http://duli.co.kr › web › kmap › view",
+      "thumbnail": "https://serpapi.com/searches/6976c1c17dcfbea66eaa8d98/images/91fb9f2f9107e4546c05ccab07845c2b5085ef08089d61824e9649c8b2855715.jpeg",
+      "favicon": "https://serpapi.com/searches/6976c1c17dcfbea66eaa8d98/images/91fb9f2f9107e4546c05ccab07845c2bbafdc94a8e079c1800885d0395a01f42.jpeg",
+      "snippet": "회사이름 닥터펫 동물의료센터. 문의전화 031-281-8275. 우편번호 17064. 지번주소 경기도 용인시 기흥구 신갈동 63 기흥역 롯데캐슬스카이 1호. 도로주소",
+      "snippet_highlighted_words": [
+        "경기도 용인시 기흥구 신갈동 63 기흥역 롯데캐슬스카이 1호"
+      ],
+      "source": "두리찾기서비스"
+    },
+    {
+      "position": 6,
+      "title": "구성동물병원 ( 경기도 용인시 기흥구 )",
+      "link": "http://localmap.co.kr/web/splus/kmap/view.php?sigun=6410000&gugun=4050000&keyno=421&keyname=%EA%B5%AC%EC%84%B1%EB%8F%99%EB%AC%BC%EB%B3%91%EC%9B%90&keylink=563000001020140001",
+      "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=http://localmap.co.kr/web/splus/kmap/view.php%3Fsigun%3D6410000%26gugun%3D4050000%26keyno%3D421%26keyname%3D%25EA%25B5%25AC%25EC%2584%25B1%25EB%258F%2599%25EB%25AC%25BC%25EB%25B3%2591%25EC%259B%2590%26keylink%3D563000001020140001&ved=2ahUKEwiqx6KwhaiSAxV9JEQIHaYqBEMQFnoECEUQAQ",
+      "displayed_link": "http://localmap.co.kr › kmap › view",
+      "favicon": "https://serpapi.com/searches/6976c1c17dcfbea66eaa8d98/images/91fb9f2f9107e4546c05ccab07845c2b6c961a83ddc89d123646c4570c7403bd.jpeg",
+      "snippet": "회사이름 구성동물병원. 문의전화 031-275-7579. 우편번호 16908. 지번주소 경기도 용인시 기흥구 마북동 526-3번지. 도로주소 경기도 용인시 기흥구 연원로 1, ...",
+      "snippet_highlighted_words": [
+        "동물병원",
+        "용인시 기흥구",
+        "용인시 기흥구"
+      ],
+      "source": "두리찾기서비스"
+    },
+    {
+      "position": 7,
+      "title": "기흥로움동물병원 - 경기 용인시, 애견동반 동물병원",
+      "link": "https://peton.me/bbs/board.php?bo_table=addPlace&wr_id=214546",
+      "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://peton.me/bbs/board.php%3Fbo_table%3DaddPlace%26wr_id%3D214546&ved=2ahUKEwiqx6KwhaiSAxV9JEQIHaYqBEMQFnoECEgQAQ",
+      "displayed_link": "https://peton.me › bbs › board",
+      "favicon": "https://serpapi.com/searches/6976c1c17dcfbea66eaa8d98/images/91fb9f2f9107e4546c05ccab07845c2b7d54bab56e9ba37535eb2a4dd1ee8fed.png",
+      "snippet": "대형견까지 가능,목줄착용,주소:경기 용인시 기흥구 기흥역로 9 1층 128호.",
+      "snippet_highlighted_words": [
+        "용인시 기흥구 기흥역"
+      ],
+      "source": "펫온"
+    },
+    {
+      "position": 8,
+      "title": "용인 기흥구 동물병원 추천 TOP 6곳 - 피리",
+      "link": "https://pirikkll331.tistory.com/173",
+      "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://pirikkll331.tistory.com/173&ved=2ahUKEwiqx6KwhaiSAxV9JEQIHaYqBEMQFnoECE4QAQ",
+      "displayed_link": "https://pirikkll331.tistory.com › ...",
+      "favicon": "https://serpapi.com/searches/6976c1c17dcfbea66eaa8d98/images/91fb9f2f9107e4546c05ccab07845c2b826c3bf659d31da19e9f3e3800e447d5.png",
+      "date": "Jul 18, 2023",
+      "snippet": "용인 기흥구 동물병원 추천 TOP 6곳 · 1. 현대동물병원 안내 · 2. 백현Se동물병원 안내 · 3. 24시블레스동물메디컬센터 안내 · 4. 기흥나무동물병원 안내 ...",
+      "snippet_highlighted_words": [
+        "1. 현대동물병원 안내"
+      ],
+      "sitelinks": {
+        "inline": [
+          {
+            "title": "현대동물병원 안내",
+            "link": "https://pirikkll331.tistory.com/173#1._%ED%98%84%EB%8C%80%EB%8F%99%EB%AC%BC%EB%B3%91%EC%9B%90_%EC%95%88%EB%82%B4"
+          },
+          {
+            "title": "기흥나무동물병원 안내",
+            "link": "https://pirikkll331.tistory.com/173#4._%EA%B8%B0%ED%9D%A5%EB%82%98%EB%AC%B4%EB%8F%99%EB%AC%BC%EB%B3%91%EC%9B%90_%EC%95%88%EB%82%B4"
+          },
+          {
+            "title": "제이엘동물병원 안내",
+            "link": "https://pirikkll331.tistory.com/173#6._%EC%A0%9C%EC%9D%B4%EC%97%98%EB%8F%99%EB%AC%BC%EB%B3%91%EC%9B%90_%EC%95%88%EB%82%B4"
+          }
+        ]
+      },
+      "source": "티스토리"
+    },
+    {
+      "position": 9,
+      "title": "동물병원",
+      "link": "https://www.sujigu.go.kr/lmth/04life050402.asp",
+      "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.sujigu.go.kr/lmth/04life050402.asp&ved=2ahUKEwiqx6KwhaiSAxV9JEQIHaYqBEMQFnoECEcQAQ",
+      "displayed_link": "https://www.sujigu.go.kr › lmth",
+      "snippet": "동물병원 ; 풍덕천동, 세브란스동물병원, 경기도 용인시 수지구 풍덕천로 135, 103호 (풍덕천동, 요진타워), 031-263-7588 ; 풍덕천동, 순수동물병원, 경기도 용인시 수지구 ...",
+      "snippet_highlighted_words": [
+        "동물병원",
+        "동물병원",
+        "용인시",
+        "동물병원",
+        "용인시"
+      ],
+      "source": "수지구청"
+    }
+  ],
+  "filters": [
+    {
+      "name": "지금 영업 중",
+      "parameters": {
+        "uds": "ALYpb_ncDc7jTlmw6Mmq7NjuX5c-DOEweXA0MuK5aNovba47budBO7m8vcNMNHNbKlgVu0Xn8uY9EU5INwa2skii9SVxL-s65jODWmIrJ2uM2w-xYI5VnrZKP2xp-aQHyiHiDtl7U5IEHaPkhnjuN-UNH6ge-ooox1APclpmzIU5alGvY_Hj6WE3OeyTbmVxnhM6DnFJ465_vAKgf85FxlsoWocBd5nacnBSxQif4FUztOK4vY-4K3k",
+        "q": "용인 기흥역 주변 동물병원 지금 영업 중"
+      },
+      "link": "https://www.google.com/search?sca_esv=6e6ec1b702c00a9e&q=%EC%9A%A9%EC%9D%B8+%EA%B8%B0%ED%9D%A5%EC%97%AD+%EC%A3%BC%EB%B3%80+%EB%8F%99%EB%AC%BC%EB%B3%91%EC%9B%90+%EC%A7%80%EA%B8%88+%EC%98%81%EC%97%85+%EC%A4%91&uds=ALYpb_ncDc7jTlmw6Mmq7NjuX5c-DOEweXA0MuK5aNovba47budBO7m8vcNMNHNbKlgVu0Xn8uY9EU5INwa2skii9SVxL-s65jODWmIrJ2uM2w-xYI5VnrZKP2xp-aQHyiHiDtl7U5IEHaPkhnjuN-UNH6ge-ooox1APclpmzIU5alGvY_Hj6WE3OeyTbmVxnhM6DnFJ465_vAKgf85FxlsoWocBd5nacnBSxQif4FUztOK4vY-4K3k&sa=X&ved=2ahUKEwiqx6KwhaiSAxV9JEQIHaYqBEMQxKsJKAB6BAgUEAE&ictx=0",
+      "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&q=%EC%9A%A9%EC%9D%B8+%EA%B8%B0%ED%9D%A5%EC%97%AD+%EC%A3%BC%EB%B3%80+%EB%8F%99%EB%AC%BC%EB%B3%91%EC%9B%90+%EC%A7%80%EA%B8%88+%EC%98%81%EC%97%85+%EC%A4%91&uds=ALYpb_ncDc7jTlmw6Mmq7NjuX5c-DOEweXA0MuK5aNovba47budBO7m8vcNMNHNbKlgVu0Xn8uY9EU5INwa2skii9SVxL-s65jODWmIrJ2uM2w-xYI5VnrZKP2xp-aQHyiHiDtl7U5IEHaPkhnjuN-UNH6ge-ooox1APclpmzIU5alGvY_Hj6WE3OeyTbmVxnhM6DnFJ465_vAKgf85FxlsoWocBd5nacnBSxQif4FUztOK4vY-4K3k"
+    },
+    {
+      "name": "최고 평점",
+      "parameters": {
+        "uds": "ALYpb_ncDc7jTlmw6Mmq7NjuX5c-RxV4tqF8Vs60HAnBeYMQ8vpIa0fliJomQI43Ao9irZJ1EJQoui036E4u8OFeJ0RvUK_s21eO0LUl3DYzfJPtP8kY0xAUP_gLJsyEORN4j977j57qgQapuwI157WvQ3VF8W0l9-5i9z7eVkf0umbQ6HfYf4yZ26g2pzOdOrawVz5Sp90VQfqXsb_pdN5jAnNORwcDC2IzkUjE0TNN1SceTFczqZY",
+        "q": "용인 기흥역 주변 동물병원 최고 평점"
+      },
+      "link": "https://www.google.com/search?sca_esv=6e6ec1b702c00a9e&q=%EC%9A%A9%EC%9D%B8+%EA%B8%B0%ED%9D%A5%EC%97%AD+%EC%A3%BC%EB%B3%80+%EB%8F%99%EB%AC%BC%EB%B3%91%EC%9B%90+%EC%B5%9C%EA%B3%A0+%ED%8F%89%EC%A0%90&uds=ALYpb_ncDc7jTlmw6Mmq7NjuX5c-RxV4tqF8Vs60HAnBeYMQ8vpIa0fliJomQI43Ao9irZJ1EJQoui036E4u8OFeJ0RvUK_s21eO0LUl3DYzfJPtP8kY0xAUP_gLJsyEORN4j977j57qgQapuwI157WvQ3VF8W0l9-5i9z7eVkf0umbQ6HfYf4yZ26g2pzOdOrawVz5Sp90VQfqXsb_pdN5jAnNORwcDC2IzkUjE0TNN1SceTFczqZY&sa=X&ved=2ahUKEwiqx6KwhaiSAxV9JEQIHaYqBEMQxKsJKAF6BAgVEAE&ictx=0",
+      "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&q=%EC%9A%A9%EC%9D%B8+%EA%B8%B0%ED%9D%A5%EC%97%AD+%EC%A3%BC%EB%B3%80+%EB%8F%99%EB%AC%BC%EB%B3%91%EC%9B%90+%EC%B5%9C%EA%B3%A0+%ED%8F%89%EC%A0%90&uds=ALYpb_ncDc7jTlmw6Mmq7NjuX5c-RxV4tqF8Vs60HAnBeYMQ8vpIa0fliJomQI43Ao9irZJ1EJQoui036E4u8OFeJ0RvUK_s21eO0LUl3DYzfJPtP8kY0xAUP_gLJsyEORN4j977j57qgQapuwI157WvQ3VF8W0l9-5i9z7eVkf0umbQ6HfYf4yZ26g2pzOdOrawVz5Sp90VQfqXsb_pdN5jAnNORwcDC2IzkUjE0TNN1SceTFczqZY"
+    }
+  ],
+  "pagination": {
+    "current": 1,
+    "next": "https://www.google.com/search?q=%EC%9A%A9%EC%9D%B8+%EA%B8%B0%ED%9D%A5%EC%97%AD+%EC%A3%BC%EB%B3%80+%EB%8F%99%EB%AC%BC%EB%B3%91%EC%9B%90&sca_esv=6e6ec1b702c00a9e&ei=wsF2aareGP3IkPIPptWQmAQ&start=10&sa=N&sstk=Af77f_fRCO2qtLIRxOVH7ppQL96zrJZI96FopaSLPaoqbtm0jX5_sBHH6bWH2x2BY09yJ0DwGlXX_U41KEunEOmSoDfP-oJIkyBUQQ&ved=2ahUKEwiqx6KwhaiSAxV9JEQIHaYqBEMQ8NMDegQICxAW",
+    "other_pages": {
+      "2": "https://www.google.com/search?q=%EC%9A%A9%EC%9D%B8+%EA%B8%B0%ED%9D%A5%EC%97%AD+%EC%A3%BC%EB%B3%80+%EB%8F%99%EB%AC%BC%EB%B3%91%EC%9B%90&sca_esv=6e6ec1b702c00a9e&ei=wsF2aareGP3IkPIPptWQmAQ&start=10&sa=N&sstk=Af77f_fRCO2qtLIRxOVH7ppQL96zrJZI96FopaSLPaoqbtm0jX5_sBHH6bWH2x2BY09yJ0DwGlXX_U41KEunEOmSoDfP-oJIkyBUQQ&ved=2ahUKEwiqx6KwhaiSAxV9JEQIHaYqBEMQ8tMDegQICxAE",
+      "3": "https://www.google.com/search?q=%EC%9A%A9%EC%9D%B8+%EA%B8%B0%ED%9D%A5%EC%97%AD+%EC%A3%BC%EB%B3%80+%EB%8F%99%EB%AC%BC%EB%B3%91%EC%9B%90&sca_esv=6e6ec1b702c00a9e&ei=wsF2aareGP3IkPIPptWQmAQ&start=20&sa=N&sstk=Af77f_fRCO2qtLIRxOVH7ppQL96zrJZI96FopaSLPaoqbtm0jX5_sBHH6bWH2x2BY09yJ0DwGlXX_U41KEunEOmSoDfP-oJIkyBUQQ&ved=2ahUKEwiqx6KwhaiSAxV9JEQIHaYqBEMQ8tMDegQICxAG",
+      "4": "https://www.google.com/search?q=%EC%9A%A9%EC%9D%B8+%EA%B8%B0%ED%9D%A5%EC%97%AD+%EC%A3%BC%EB%B3%80+%EB%8F%99%EB%AC%BC%EB%B3%91%EC%9B%90&sca_esv=6e6ec1b702c00a9e&ei=wsF2aareGP3IkPIPptWQmAQ&start=30&sa=N&sstk=Af77f_fRCO2qtLIRxOVH7ppQL96zrJZI96FopaSLPaoqbtm0jX5_sBHH6bWH2x2BY09yJ0DwGlXX_U41KEunEOmSoDfP-oJIkyBUQQ&ved=2ahUKEwiqx6KwhaiSAxV9JEQIHaYqBEMQ8tMDegQICxAI",
+      "5": "https://www.google.com/search?q=%EC%9A%A9%EC%9D%B8+%EA%B8%B0%ED%9D%A5%EC%97%AD+%EC%A3%BC%EB%B3%80+%EB%8F%99%EB%AC%BC%EB%B3%91%EC%9B%90&sca_esv=6e6ec1b702c00a9e&ei=wsF2aareGP3IkPIPptWQmAQ&start=40&sa=N&sstk=Af77f_fRCO2qtLIRxOVH7ppQL96zrJZI96FopaSLPaoqbtm0jX5_sBHH6bWH2x2BY09yJ0DwGlXX_U41KEunEOmSoDfP-oJIkyBUQQ&ved=2ahUKEwiqx6KwhaiSAxV9JEQIHaYqBEMQ8tMDegQICxAK",
+      "6": "https://www.google.com/search?q=%EC%9A%A9%EC%9D%B8+%EA%B8%B0%ED%9D%A5%EC%97%AD+%EC%A3%BC%EB%B3%80+%EB%8F%99%EB%AC%BC%EB%B3%91%EC%9B%90&sca_esv=6e6ec1b702c00a9e&ei=wsF2aareGP3IkPIPptWQmAQ&start=50&sa=N&sstk=Af77f_fRCO2qtLIRxOVH7ppQL96zrJZI96FopaSLPaoqbtm0jX5_sBHH6bWH2x2BY09yJ0DwGlXX_U41KEunEOmSoDfP-oJIkyBUQQ&ved=2ahUKEwiqx6KwhaiSAxV9JEQIHaYqBEMQ8tMDegQICxAM",
+      "7": "https://www.google.com/search?q=%EC%9A%A9%EC%9D%B8+%EA%B8%B0%ED%9D%A5%EC%97%AD+%EC%A3%BC%EB%B3%80+%EB%8F%99%EB%AC%BC%EB%B3%91%EC%9B%90&sca_esv=6e6ec1b702c00a9e&ei=wsF2aareGP3IkPIPptWQmAQ&start=60&sa=N&sstk=Af77f_fRCO2qtLIRxOVH7ppQL96zrJZI96FopaSLPaoqbtm0jX5_sBHH6bWH2x2BY09yJ0DwGlXX_U41KEunEOmSoDfP-oJIkyBUQQ&ved=2ahUKEwiqx6KwhaiSAxV9JEQIHaYqBEMQ8tMDegQICxAO",
+      "8": "https://www.google.com/search?q=%EC%9A%A9%EC%9D%B8+%EA%B8%B0%ED%9D%A5%EC%97%AD+%EC%A3%BC%EB%B3%80+%EB%8F%99%EB%AC%BC%EB%B3%91%EC%9B%90&sca_esv=6e6ec1b702c00a9e&ei=wsF2aareGP3IkPIPptWQmAQ&start=70&sa=N&sstk=Af77f_fRCO2qtLIRxOVH7ppQL96zrJZI96FopaSLPaoqbtm0jX5_sBHH6bWH2x2BY09yJ0DwGlXX_U41KEunEOmSoDfP-oJIkyBUQQ&ved=2ahUKEwiqx6KwhaiSAxV9JEQIHaYqBEMQ8tMDegQICxAQ",
+      "9": "https://www.google.com/search?q=%EC%9A%A9%EC%9D%B8+%EA%B8%B0%ED%9D%A5%EC%97%AD+%EC%A3%BC%EB%B3%80+%EB%8F%99%EB%AC%BC%EB%B3%91%EC%9B%90&sca_esv=6e6ec1b702c00a9e&ei=wsF2aareGP3IkPIPptWQmAQ&start=80&sa=N&sstk=Af77f_fRCO2qtLIRxOVH7ppQL96zrJZI96FopaSLPaoqbtm0jX5_sBHH6bWH2x2BY09yJ0DwGlXX_U41KEunEOmSoDfP-oJIkyBUQQ&ved=2ahUKEwiqx6KwhaiSAxV9JEQIHaYqBEMQ8tMDegQICxAS",
+      "10": "https://www.google.com/search?q=%EC%9A%A9%EC%9D%B8+%EA%B8%B0%ED%9D%A5%EC%97%AD+%EC%A3%BC%EB%B3%80+%EB%8F%99%EB%AC%BC%EB%B3%91%EC%9B%90&sca_esv=6e6ec1b702c00a9e&ei=wsF2aareGP3IkPIPptWQmAQ&start=90&sa=N&sstk=Af77f_fRCO2qtLIRxOVH7ppQL96zrJZI96FopaSLPaoqbtm0jX5_sBHH6bWH2x2BY09yJ0DwGlXX_U41KEunEOmSoDfP-oJIkyBUQQ&ved=2ahUKEwiqx6KwhaiSAxV9JEQIHaYqBEMQ8tMDegQICxAU"
+    }
+  },
+  "serpapi_pagination": {
+    "current": 1,
+    "next_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&q=%EC%9A%A9%EC%9D%B8+%EA%B8%B0%ED%9D%A5%EC%97%AD+%EC%A3%BC%EB%B3%80+%EB%8F%99%EB%AC%BC%EB%B3%91%EC%9B%90&start=10",
+    "next": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&q=%EC%9A%A9%EC%9D%B8+%EA%B8%B0%ED%9D%A5%EC%97%AD+%EC%A3%BC%EB%B3%80+%EB%8F%99%EB%AC%BC%EB%B3%91%EC%9B%90&start=10",
+    "other_pages": {
+      "2": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&q=%EC%9A%A9%EC%9D%B8+%EA%B8%B0%ED%9D%A5%EC%97%AD+%EC%A3%BC%EB%B3%80+%EB%8F%99%EB%AC%BC%EB%B3%91%EC%9B%90&start=10",
+      "3": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&q=%EC%9A%A9%EC%9D%B8+%EA%B8%B0%ED%9D%A5%EC%97%AD+%EC%A3%BC%EB%B3%80+%EB%8F%99%EB%AC%BC%EB%B3%91%EC%9B%90&start=20",
+      "4": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&q=%EC%9A%A9%EC%9D%B8+%EA%B8%B0%ED%9D%A5%EC%97%AD+%EC%A3%BC%EB%B3%80+%EB%8F%99%EB%AC%BC%EB%B3%91%EC%9B%90&start=30",
+      "5": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&q=%EC%9A%A9%EC%9D%B8+%EA%B8%B0%ED%9D%A5%EC%97%AD+%EC%A3%BC%EB%B3%80+%EB%8F%99%EB%AC%BC%EB%B3%91%EC%9B%90&start=40",
+      "6": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&q=%EC%9A%A9%EC%9D%B8+%EA%B8%B0%ED%9D%A5%EC%97%AD+%EC%A3%BC%EB%B3%80+%EB%8F%99%EB%AC%BC%EB%B3%91%EC%9B%90&start=50",
+      "7": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&q=%EC%9A%A9%EC%9D%B8+%EA%B8%B0%ED%9D%A5%EC%97%AD+%EC%A3%BC%EB%B3%80+%EB%8F%99%EB%AC%BC%EB%B3%91%EC%9B%90&start=60",
+      "8": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&q=%EC%9A%A9%EC%9D%B8+%EA%B8%B0%ED%9D%A5%EC%97%AD+%EC%A3%BC%EB%B3%80+%EB%8F%99%EB%AC%BC%EB%B3%91%EC%9B%90&start=70",
+      "9": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&q=%EC%9A%A9%EC%9D%B8+%EA%B8%B0%ED%9D%A5%EC%97%AD+%EC%A3%BC%EB%B3%80+%EB%8F%99%EB%AC%BC%EB%B3%91%EC%9B%90&start=80",
+      "10": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&q=%EC%9A%A9%EC%9D%B8+%EA%B8%B0%ED%9D%A5%EC%97%AD+%EC%A3%BC%EB%B3%80+%EB%8F%99%EB%AC%BC%EB%B3%91%EC%9B%90&start=90"
+    }
+  }
+}
+2026-01-26 10:22:13.643 INFO  [boundedElastic-1] c.e.demo.tool.InternetSearchTools - 1. 용인 기흥역 기흥나무동물병원 추천(과잉진료 없고 친절한 곳)
+https://blog.naver.com/ggu2ya/223583690973
+카테고리 이동 쏭꾸리와 김꾸이의 행복여행 · 기흥나무동물병원 · 주소 : 경기 용인시 기흥구 기흥로 12 · 유성빌딩 1층(구갈동 374-1) · * 기흥역 1 ...
+
+2. 용인 현대동물병원 (@hyundai_ah_)
+https://www.instagram.com/hyundai_ah_/
+경기 용인시 기흥구 상갈로 31 1층 & 2층 365일 연중 무휴 진료실 분리, Cat Friendly Clinic 긍정강화 피어프리 아로마테라피 케어 미용 ⬇진료|종합검진|치과 ...
+
+3. [용인시 기흥구] 용인시 기흥구 동물병원 리스트
+https://blog.naver.com/petinpet/221041592968
+1. Dr.J동물병원. 용인시 기흥구 흥덕2로 87번길 18 ,D동 107호(영덕동). 215-7975. 2. 보정동물병원. 용인시 기흥구 보정로 32(보정동). 898-3708.

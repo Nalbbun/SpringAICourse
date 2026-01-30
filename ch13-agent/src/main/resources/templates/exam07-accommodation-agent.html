@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spring AI - Accommodation Agent (Exam05-2)</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>  
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>  
+  <link href="/css/springai.css" rel="stylesheet" />
+  <script>
+    // 숙소 정보를 카드 형태로 표시하는 함수
+    function displayAccommodations(accommodations) {
+      const container = document.getElementById('resultsContainer');
+      
+      if (!accommodations || accommodations.length === 0) {
+        container.innerHTML = '<div class="alert alert-warning">검색 결과가 없습니다.</div>';
+        return;
+      }
+
+      let html = '<div class="row g-3">';
+      accommodations.forEach((acc, index) => {
+        const priceFormatted = acc.pricePerNight ? acc.pricePerNight.toLocaleString() : '가격 미정';
+        html += `
+          <div class="col-md-6">
+            <div class="card h-100">
+              <div class="card-header bg-success text-white">
+                <h5 class="mb-0">${acc.name || '숙소명 미상'}</h5>
+              </div>
+              <div class="card-body">
+                <p class="card-text"><strong>주소:</strong> ${acc.address || '주소 미상'}</p>
+                <p class="card-text">${acc.description || '설명 없음'}</p>
+                <hr>
+                <p class="card-text text-end">
+                  <strong class="text-success fs-5">₩${priceFormatted}</strong> <small class="text-muted">/ 1박</small>
+                </p>
+              </div>
+            </div>
+          </div>
+        `;
+      });
+      html += '</div>';
+      container.innerHTML = html;
+    }
+
+    // 제출 버튼을 클릭했을 때 실행하는 함수
+    async function handleSubmit() {
+      try {
+        const question = document.getElementById("question").value;
+        if (question === "") return;
+
+        // 결과 컨테이너 초기화
+        document.getElementById('resultsContainer').innerHTML = '';
+        
+        // 사용자 질문 표시
+        document.getElementById('userQuery').textContent = question;
+        document.getElementById('resultsSection').classList.remove('d-none');
+
+        // 스피너 보여주기
+        document.getElementById('spinner').classList.remove('d-none');
+
+        // AJAX 요청하고 응답받기
+        const response = await fetch('/ai/exam07-accommodation-agent', {
+          method: "post",
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'Accept': 'application/json'
+          },
+          body: new URLSearchParams({ question })
+        });
+
+        const accommodations = await response.json();
+        displayAccommodations(accommodations);
+
+      } catch (error) {
+        console.error(error);
+        document.getElementById('resultsContainer').innerHTML = 
+          '<div class="alert alert-danger">오류가 발생했습니다: ' + error.message + '</div>';
+      } finally {
+        document.getElementById('spinner').classList.add('d-none');
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <div class="d-flex flex-column vh-100">
+    <div id="headPanel" class="navbar justify-content-between">
+      <a href="/" class="navbar-brand ps-2">
+        <img src="/image/spring_ai_logo_with_text.svg" width="200" />
+      </a>
+      <div id="spinner" class="spinner-border text-success d-none me-3" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+
+    <div class="flex-grow-1 container-fluid my-3" style="overflow-y:auto;">
+      <div class="card mb-3">
+        <div class="card-header bg-success text-white">
+          <h5 class="mb-0">Exam07: 숙소 추천 에이전트</h5>
+        </div>
+        <div class="card-body">
+          <p class="mb-0">
+            <small class="text-muted">
+              인터넷 검색을 통해 숙소를 찾아드립니다.
+            </small>
+          </p>
+        </div>
+      </div>
+
+      <div class="card mb-3">
+        <div class="card-body">
+          <div class="p-2 border-bottom mb-2">
+            <small class="text-muted">샘플 질문:</small>
+            <button type="button" class="btn btn-outline-secondary btn-sm ms-1" 
+                    onclick="document.getElementById('question').value='제주도 숙소 추천해줘'">제주도 숙소 추천해줘</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm ms-1" 
+                    onclick="document.getElementById('question').value='서울 강남 호텔 찾아줘'">서울 강남 호텔 찾아줘</button>
+          </div>
+          <div class="input-group">
+            <span class="input-group-text">질문</span>
+            <textarea id="question" class="form-control" rows="2">제주도 숙소 추천해줘</textarea>
+            <span class="input-group-text">
+              <button type="button" class="btn btn-success" onclick="handleSubmit()">검색</button>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div id="resultsSection" class="d-none">
+        <div class="card">
+          <div class="card-header">
+            <h6 class="mb-0">검색 결과: <span id="userQuery" class="text-success"></span></h6>
+          </div>
+          <div class="card-body">
+            <div id="resultsContainer"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

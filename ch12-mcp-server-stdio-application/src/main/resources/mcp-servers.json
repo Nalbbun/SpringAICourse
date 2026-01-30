@@ -1,0 +1,35 @@
+{
+  "mcpServers": {
+    "ch12-mcp-server-stdio-datetime": {
+      "command": "java",
+      "args": [
+        "-jar",
+        "D:/Work/ai/spring-ai/출판/소스/projects/ch12-mcp-server-stdio-datetime/build/libs/ch12-mcp-server-stdio-datetime-0.0.1-SNAPSHOT.jar"
+      ]
+    },
+
+    "ch12-mcp-server-stdio-boombarrier": {
+      "command": "java",
+      "args": [
+        "-jar",
+        "D:/Work/ai/spring-ai/출판/소스/projects/ch12-mcp-server-stdio-boombarrier/build/libs/ch12-mcp-server-stdio-boombarrier-0.0.1-SNAPSHOT.jar"
+      ]
+    },
+
+    "ch12-mcp-server-stdio-filesystem": {
+      "command": "java",
+      "args": [
+        "-jar",
+        "D:/Work/ai/spring-ai/출판/소스/projects/ch12-mcp-server-stdio-filesystem/build/libs/ch12-mcp-server-stdio-filesystem-0.0.1-SNAPSHOT.jar"
+      ]
+    },
+
+    "ch12-mcp-server-stdio-internetsearch": {
+      "command": "java",
+      "args": [
+        "-jar",
+        "D:/Work/ai/spring-ai/출판/소스/projects/ch12-mcp-server-stdio-internetsearch/build/libs/ch12-mcp-server-stdio-internetsearch-0.0.1-SNAPSHOT.jar"
+      ]
+    }
+  }
+}

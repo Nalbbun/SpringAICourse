@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Agent Travel Planner</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body class="d-flex flex-column vh-100 bg-light" style="overflow: hidden;">    
+    <!-- Header -->
+    <nav class="navbar bg-white shadow-sm">
+        <div class="container-fluid">
+            <a href="/" class="navbar-brand">
+                <img src="/image/spring_ai_logo_with_text.svg" width="200" alt="Spring AI">
+            </a>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="bg-primary bg-gradient text-white py-3 shadow">
+        <div class="container">
+            <a href="/" class="text-white text-decoration-none d-inline-block mb-2 opacity-75">
+                <i class="fas fa-arrow-left me-2"></i>홈으로
+            </a>
+            <h1 class="h4 fw-bold mb-1">
+                <i class="fas fa-robot me-2"></i>Multi-Agent Travel Planner
+            </h1>
+            <p class="mb-0 small opacity-75">
+                <i class="fas fa-info-circle me-1"></i>
+                병렬 실행 • 상태 관리 • 조건부 재계획 • SSE 스트리밍
+            </p>
+        </div>
+    </header>
+
+
+    <!-- Main Content -->
+    <div class="container-fluid flex-fill overflow-hidden p-3 d-flex flex-column">
+        <div class="card shadow border-0 d-flex flex-column h-100">
+            <!-- Chat Messages Area -->
+            <div class="card-body p-4 bg-light overflow-auto" id="chatMessages" style="flex: 1; min-height: 0;">
+                <!-- Welcome Message -->
+                <div class="d-flex align-items-start mb-3 animate__animated animate__fadeIn">
+                    <div class="text-white rounded-circle d-flex align-items-center justify-content-center me-3 shadow" style="width: 45px; height: 45px; flex-shrink: 0; font-weight: bold; font-size: 1rem; background-color: #6db33f;">
+                        AI
+                    </div>
+                    <div class="bg-white rounded-3 p-4 shadow-sm" style="max-width: 80%;">
+                        <h6 class="mb-3"><i class="fas fa-hand-sparkles me-2 text-primary"></i>안녕하세요!</h6>
+                        <p class="mb-2">제주도 여행 계획을 도와드리는 Multi-Agent 시스템입니다. 🌴</p>
+                        <p class="mb-0 small text-muted">
+                            <strong>예:</strong> "제주도 2박3일 50만원 예산으로 여행 계획 짜줘"
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input Area -->
+            <div class="card-footer bg-white border-top p-3">
+                <div class="mb-2">
+                    <div class="d-flex flex-wrap gap-2">
+                        <button class="btn btn-sm btn-outline-success" onclick="setQuickMessage('제주도 2박3일 50만원 예산으로 여행 계획 짜줘')">
+                            <i class="fas fa-umbrella-beach me-1"></i>제주도 2박3일 50만원
+                        </button>                        
+                        <button class="btn btn-sm btn-outline-primary" onclick="setQuickMessage('제주도 2박3일 20만원 예산으로 여행 계획 짜줘')">
+                            <i class="fas fa-umbrella-beach me-1"></i>제주도 2박3일 20만원
+                        </button>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="messageInput" class="form-control form-control-lg" 
+                           placeholder="제주도 2박3일 50만원 예산으로 여행 계획 짜줘." 
+                           onkeypress="if(event.key === 'Enter') sendMessage()">
+                    <button class="btn btn-primary bg-gradient text-white px-4" id="sendButton" onclick="sendMessage()">
+                        <i class="fas fa-paper-plane me-2"></i>전송
+                    </button>
+                </div>
+                <div class="mt-2">
+                    <small class="text-muted">
+                        <i class="fas fa-lightbulb me-1"></i>
+                        <strong>Tip:</strong> "여행지 + 기간 + 예산"을 함께 입력하면 더 정확한 계획을 받을 수 있습니다
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let currentEventSource = null;
+
+        function setQuickMessage(msg) {
+            document.getElementById('messageInput').value = msg;
+            document.getElementById('messageInput').focus();
+        }
+
+        async function sendMessage() {
+            const messageInput = document.getElementById('messageInput');
+            const userMessage = messageInput.value.trim();
+            
+            if (!userMessage) {
+                alert('메시지를 입력해주세요.');
+                return;
+            }
+
+            // 사용자 메시지 표시
+            addUserMessage(userMessage);
+            messageInput.value = '';
+
+            // AI 응답 메시지 준비 (타이핑 인디케이터)
+            const aiMessageId = 'ai-' + Date.now();
+            const aiMessageDiv = addTypingIndicator(aiMessageId);
+
+            // 입력 비활성화
+            messageInput.disabled = true;
+            document.getElementById('sendButton').disabled = true;
+
+            try {
+                // SSE 연결
+                if (currentEventSource) {
+                    currentEventSource.close();
+                }
+
+                const eventSource = new EventSource(`/api/ai/chat?message=${encodeURIComponent(userMessage)}`);
+                currentEventSource = eventSource;
+
+                let fullResponse = '';
+                let agentStatuses = {};
+
+                eventSource.addEventListener('agent', (e) => {
+                    try {
+                        const data = JSON.parse(e.data);
+                        const { agent, status, message } = data;
+                        
+                        if (status === 'running') {
+                            agentStatuses[agent] = 'running';
+                            updateTypingMessage(aiMessageDiv, message || '처리 중...');
+                        } else if (status === 'complete') {
+                            agentStatuses[agent] = 'completed';
+                            updateTypingMessage(aiMessageDiv, '처리 중...');
+                        } else if (status === 'error' || status === 'failed') {
+                            agentStatuses[agent] = 'failed';
+                        } else if (status === 'warning') {
+                            agentStatuses[agent] = 'warning';
+                        }
+                        
+                        updateAgentBadges(aiMessageDiv, agentStatuses);
+                    } catch (err) {
+                        // Agent event parse error
+                    }
+                });
+
+                eventSource.addEventListener('message', (e) => {
+                    try {
+                        fullResponse = e.data;
+
+                        
+                        // JSON 배열 응답인 경우 (AttractionAgent 등의 구조화된 출력)
+                        try {
+                            const jsonData = JSON.parse(e.data);
+                            
+                            // 배열인 경우 (관광지, 맛집 등)
+                            if (Array.isArray(jsonData)) {
+                                // JSON을 보기 좋게 포맷팅
+                                fullResponse = JSON.stringify(jsonData, null, 2);
+                            } 
+                            // 객체이고 plan이나 budgetAnalysis가 있는 경우 (전체 여행 계획)
+                            else if (jsonData.plan || jsonData.budgetAnalysis) {
+                                // 전체 여행 계획도 채팅창에 표시
+                                fullResponse = formatTravelPlan(jsonData);
+                            }
+                        } catch {
+                            // JSON이 아니면 일반 텍스트로 처리
+                        }
+                    } catch (err) {
+                        // Message event parse error
+                    }
+                });
+
+                eventSource.addEventListener('complete', (e) => {
+                    eventSource.close();
+                    currentEventSource = null;
+                    
+                    // complete 이벤트에 최종 결과가 포함될 수 있음
+                    if (e.data && e.data.trim() !== '') {
+                        fullResponse = e.data;
+                    }
+                    
+                    // 최종 메시지 업데이트
+                    updateFinalMessage(aiMessageDiv, fullResponse || '결과가 없습니다.', agentStatuses);
+                    
+                    // 입력 활성화
+                    messageInput.disabled = false;
+                    document.getElementById('sendButton').disabled = false;
+                    messageInput.focus();
+                });
+
+                eventSource.onerror = (e) => {
+                    eventSource.close();
+                    currentEventSource = null;
+                    updateFinalMessage(aiMessageDiv, fullResponse || '오류가 발생했습니다.', agentStatuses);
+                    
+                    messageInput.disabled = false;
+                    document.getElementById('sendButton').disabled = false;
+                };
+
+            } catch (error) {
+                updateFinalMessage(aiMessageDiv, '오류가 발생했습니다: ' + error.message, {});
+                messageInput.disabled = false;
+                document.getElementById('sendButton').disabled = false;
+            }
+        }
+
+        function addUserMessage(message) {
+            const chatMessages = document.getElementById('chatMessages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'd-flex align-items-start mb-3 justify-content-end';
+            messageDiv.innerHTML = `
+                <div class="bg-primary bg-gradient text-white rounded-3 p-3 shadow" style="max-width: 70%; order: 2;">
+                    ${escapeHtml(message)}
+                </div>
+                <div class="bg-primary bg-gradient text-white rounded-circle d-flex align-items-center justify-content-center me-2 shadow" style="width: 45px; height: 45px; flex-shrink: 0; order: 1;">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+            `;
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function addTypingIndicator(messageId) {
+            const chatMessages = document.getElementById('chatMessages');
+            const messageDiv = document.createElement('div');
+            messageDiv.id = messageId;
+            messageDiv.className = 'd-flex align-items-start mb-3';
+            messageDiv.innerHTML = `
+                <div class="text-white rounded-circle d-flex align-items-center justify-content-center me-3 shadow" style="width: 45px; height: 45px; flex-shrink: 0; font-weight: bold; font-size: 1rem; background-color: #6db33f;">
+                    AI
+                </div>
+                <div style="max-width: 70%;">
+                    <div class="agent-badges mb-2"></div>
+                    <div class="bg-white rounded-3 p-3 shadow-sm message-content">
+                        <div class="spinner-border spinner-border-sm text-primary me-2" role="status"></div>
+                        <span class="text-muted">처리 중...</span>
+                    </div>
+                </div>
+            `;
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            return messageDiv;
+        }
+
+        function updateTypingMessage(messageDiv, content) {
+            const contentDiv = messageDiv.querySelector('.message-content');
+            contentDiv.innerHTML = `
+                <div class="spinner-border spinner-border-sm text-primary me-2" role="status"></div>
+                <span class="text-muted">${escapeHtml(content)}</span>
+            `;
+            document.getElementById('chatMessages').scrollTop = document.getElementById('chatMessages').scrollHeight;
+        }
+
+        function updateAgentBadges(messageDiv, statuses) {
+            const badgesContainer = messageDiv.querySelector('.agent-badges');
+            if (!badgesContainer) {
+                return;
+            }
+            
+            // 기존 배지들을 유지하면서 업데이트
+            const agentIcons = {
+                'AttractionAgent': 'fa-landmark',
+                'RestaurantAgent': 'fa-utensils',
+                'AccommodationAgent': 'fa-hotel',
+                'PlanAgent': 'fa-calendar-alt',
+                'WeatherAgent': 'fa-cloud-sun',
+                'BudgetAgent': 'fa-calculator',
+                'YoutubeSearchAgent': 'fa-youtube'
+            };
+            
+            // 기존 배지들의 상태 보존 (완료된 배지는 유지)
+            const existingBadges = {};
+            Array.from(badgesContainer.children).forEach(badge => {
+                const agent = badge.getAttribute('data-agent');
+                if (agent) {
+                    existingBadges[agent] = badge;
+                }
+            });
+            
+            // 모든 에이전트의 상태를 업데이트 (기존 + 새로운)
+            const allAgents = new Set([...Object.keys(existingBadges), ...Object.keys(statuses)]);
+            
+            allAgents.forEach(agent => {
+                const status = statuses[agent] || 'completed'; // 상태가 없으면 완료된 것으로 간주
+                
+                // 기존 배지 찾기
+                let badge = existingBadges[agent];
+                
+                // 없으면 새로 생성
+                if (!badge) {
+                    badge = document.createElement('span');
+                    badge.setAttribute('data-agent', agent);
+                    badge.className = 'badge me-1 mb-1 agent-badge';
+                    badgesContainer.appendChild(badge);
+                }
+                
+                // 상태에 따라 배지 스타일 및 내용 업데이트
+                const icon = agentIcons[agent] || 'fa-cog';
+                let badgeClass = 'badge me-1 mb-1 agent-badge';
+                let statusIcon = '';
+                
+                if (status === 'running') {
+                    badgeClass += ' bg-warning text-dark';
+                    statusIcon = '<i class="fas fa-spinner fa-spin me-1"></i>';
+                } else if (status === 'completed') {
+                    badgeClass += ' bg-success';
+                    statusIcon = '<i class="fas fa-check me-1"></i>';
+                } else if (status === 'failed') {
+                    badgeClass += ' bg-danger';
+                    statusIcon = '<i class="fas fa-times me-1"></i>';
+                } else if (status === 'warning') {
+                    badgeClass += ' bg-warning text-dark';
+                    statusIcon = '<i class="fas fa-exclamation-triangle me-1"></i>';
+                } else {
+                    badgeClass += ' bg-secondary';
+                    statusIcon = '<i class="fas fa-circle me-1"></i>';
+                }
+                
+                badge.className = badgeClass;
+                badge.innerHTML = `${statusIcon}<i class="fas ${icon} me-1"></i>${agent}`;
+            });
+        }
+
+        function updateFinalMessage(messageDiv, content, statuses) {
+            const contentDiv = messageDiv.querySelector('.message-content');
+            
+            // JSON 파싱 시도
+            try {
+                const jsonData = JSON.parse(content);
+                
+                // TravelPlan 형식인지 확인 (days와 totalCost 필드 존재)
+                if (jsonData.days && (jsonData.totalCost !== undefined || jsonData.budget)) {
+                    contentDiv.innerHTML = renderTravelPlan(jsonData);
+                }
+                // JSON 배열인 경우 (검색 결과)
+                else if (Array.isArray(jsonData)) {
+                    let htmlContent = '<div class="json-result">';
+                    jsonData.forEach((item, index) => {
+                        htmlContent += `<div class="mb-3 p-3 border rounded bg-white">`;
+                        
+                        // 제목: name 필드 사용
+                        const itemName = item.name || item.attractionName || '항목';
+                        htmlContent += `<h6 class="text-primary mb-2"><strong>${index + 1}. ${itemName}</strong></h6>`;
+                        
+                        // 나머지 필드들 표시
+                        for (const [key, value] of Object.entries(item)) {
+                            if (key !== 'name' && key !== 'attractionName') {
+                                const labelMap = {
+                                    'address': '📍 주소',
+                                    'description': '📝 설명',
+                                    'entranceFee': '💰 입장료',
+                                    'nightlyRate': '💰 1박 요금',
+                                    'price': '💰 가격대'
+                                };
+                                const label = labelMap[key] || key;
+                                htmlContent += `<p class="mb-1"><strong>${label}:</strong> ${value}</p>`;
+                            }
+                        }
+                        htmlContent += `</div>`;
+                    });
+                    htmlContent += '</div>';
+                    contentDiv.innerHTML = htmlContent;
+                } else {
+                    // 기타 JSON 객체는 JSON viewer로 표시
+                    contentDiv.innerHTML = renderJsonViewer(jsonData, 'JSON Response');
+                }
+            } catch {
+                // JSON이 아니면 마크다운 그대로 표시
+                let cleanContent = content.trim();
+                if ((cleanContent.startsWith('"') && cleanContent.endsWith('"')) || 
+                    (cleanContent.startsWith("'") && cleanContent.endsWith("'"))) {
+                    cleanContent = cleanContent.slice(1, -1);
+                }
+                contentDiv.innerHTML = `<pre style="white-space: pre-wrap; word-wrap: break-word; background: #f8f9fa; padding: 20px; border-radius: 8px; font-family: 'Courier New', monospace; line-height: 1.6;">${escapeHtml(cleanContent)}</pre>`;
+            }
+            
+            // 에이전트 배지 최종 상태로 업데이트
+            updateAgentBadges(messageDiv, statuses);
+            
+            document.getElementById('chatMessages').scrollTop = document.getElementById('chatMessages').scrollHeight;
+        }
+
+        function renderTravelPlan(planData) {
+            let html = '<div class="travel-plan-container">';
+            
+            // 일정 렌더링
+            if (planData.days && planData.days.length > 0) {
+                html += '<div class="mb-4">';
+                planData.days.forEach(day => {
+                    html += `
+                        <div class="bg-white rounded-3 p-4 mb-3 shadow-sm border-start border-primary border-4">
+                            <h5 class="text-primary fw-bold mb-3">
+                                <i class="fas fa-calendar-day me-2"></i>${day.day}일차
+                            </h5>
+                    `;
+                    
+                    // 시간순 일정
+                    if (day.schedule && day.schedule.length > 0) {
+                        day.schedule.forEach(item => {
+                            html += renderScheduleItem(item);
+                        });
+                    }
+                    
+                    html += '</div>';
+                });
+                html += '</div>';
+            }
+            
+            // 예산 렌더링
+            html += renderBudget(planData);
+            
+            html += '</div>';
+            return html;
+        }
+
+        function renderScheduleItem(item) {
+            return `
+                <div class="border-start border-2 border-light ps-3 mb-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <div class="flex-grow-1">
+                            <div class="mb-1">
+                                <span class="badge bg-primary bg-gradient rounded-pill me-2">${item.time}</span>
+                                <strong class="fs-6">${item.name}</strong>
+                            </div>
+                            <p class="text-muted small mb-1">
+                                <i class="fas fa-map-marker-alt me-1"></i>${item.address}
+                            </p>
+                            <p class="mb-0 small">${item.description}</p>
+                        </div>
+                        <div class="ms-3">
+                            <span class="badge bg-warning text-dark">${formatNumber(item.cost)}원</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderBudget(planData) {
+            // Plan 객체에서 필요한 필드들 추출
+            const meals = planData.meals || 0;
+            const accommodation = planData.accommodation || 0;
+            const attractions = planData.attractions || 0;
+            const totalCost = planData.totalCost || (meals + accommodation + attractions);
+            
+            // maxBudget은 Plan 객체에서 가져옴
+            const maxBudget = planData.maxBudget || totalCost;
+            const remaining = maxBudget - totalCost;
+            
+            return `
+                <div class="bg-white rounded-3 p-4 shadow-sm">
+                    <h5 class="text-primary fw-bold mb-3">
+                        <i class="fas fa-wallet me-2"></i>예산 분석
+                    </h5>
+                    
+                    <div class="border-bottom pb-3 mb-3">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span><i class="fas fa-utensils me-2 text-success"></i>식비</span>
+                            <strong>${formatNumber(meals)}원</strong>
+                        </div>
+                    </div>
+                    
+                    <div class="border-bottom pb-3 mb-3">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span><i class="fas fa-hotel me-2 text-info"></i>숙박비</span>
+                            <strong>${formatNumber(accommodation)}원</strong>
+                        </div>
+                    </div>
+                    
+                    <div class="border-bottom pb-3 mb-3">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span><i class="fas fa-ticket-alt me-2 text-warning"></i>관광/입장료</span>
+                            <strong>${formatNumber(attractions)}원</strong>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-3 pt-3 border-top">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="fw-bold">총 예상 경비</span>
+                            <strong class="text-primary fs-5">${formatNumber(totalCost)}원</strong>
+                        </div>
+                        <div class="d-flex justify-content-between mb-3 text-muted small">
+                            <span>최대 예산</span>
+                            <span>${formatNumber(maxBudget)}원</span>
+                        </div>
+                        
+                        <div class="d-flex justify-content-between text-success">
+                            <span class="small">잔액</span>
+                            <strong>${formatNumber(remaining)}원</strong>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function formatNumber(num) {
+            return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+
+        function enhanceTravelPlanStyle(html) {
+            // 줄바꿈 문자를 <br> 태그로 변환
+            html = html.replace(/\\n/g, '<br>');
+            
+            // h3 태그에 스타일 추가 (1일차, 2일차 등)
+            html = html.replace(/<h3>/g, '<h3 class="mt-4 mb-3 pb-2 border-bottom border-primary text-primary" style="font-weight: 600;">');
+            
+            // ### 제목 패턴을 h3으로 변환 (Markdown이 처리 못한 경우)
+            html = html.replace(/###\s*(\d+일차)/g, '<h3 class="mt-4 mb-3 pb-2 border-bottom border-primary text-primary" style="font-weight: 600;">$1</h3>');
+            
+            // 구분선(---) 패턴 변환
+            html = html.replace(/---/g, '<hr class="my-4" style="border-top: 2px solid #667eea;">');
+            html = html.replace(/<hr>/g, '<hr class="my-4" style="border-top: 2px solid #667eea;">');
+            
+            // - 로 시작하는 리스트 항목을 bullet point로 변환
+            html = html.replace(/-\s+오전:/g, '<div class="mb-2 ms-3" style="line-height: 1.8;">🌅 <strong>오전:</strong>');
+            html = html.replace(/-\s+오후:/g, '<div class="mb-2 ms-3" style="line-height: 1.8;">☀️ <strong>오후:</strong>');
+            html = html.replace(/-\s+저녁:/g, '<div class="mb-2 ms-3" style="line-height: 1.8;">🌙 <strong>저녁:</strong>');
+            html = html.replace(/-\s+/g, '<div class="mb-2 ms-3" style="line-height: 1.8;">• ');
+            
+            // 중첩된 리스트 항목 (주소, 설명, 입장료)
+            html = html.replace(/\s+-\s+주소:/g, '<div class="ms-4 mb-1" style="color: #666; font-size: 0.95rem;"><strong>📍 주소:</strong>');
+            html = html.replace(/\s+-\s+설명:/g, '<div class="ms-4 mb-1" style="color: #666; font-size: 0.95rem;"><strong>📝 설명:</strong>');
+            html = html.replace(/\s+-\s+입장료:/g, '<div class="ms-4 mb-1" style="color: #666; font-size: 0.95rem;"><strong>💰 입장료:</strong>');
+            
+            // div 태그 닫기 (각 항목 끝에)
+            html = html.replace(/<div class="mb-2 ms-3"[^>]*>([^<]*(?:<[^/][^>]*>[^<]*<\/[^>]*>)*[^<]*)<br>/g, '<div class="mb-2 ms-3" style="line-height: 1.8;">$1</div>');
+            html = html.replace(/<div class="ms-4 mb-1"[^>]*>([^<]*(?:<[^/][^>]*>[^<]*<\/[^>]*>)*[^<]*)<br>/g, '<div class="ms-4 mb-1" style="color: #666; font-size: 0.95rem;">$1</div>');
+            
+            // ul/li 리스트 스타일 개선 (Markdown 처리된 경우)
+            html = html.replace(/<ul>/g, '<ul class="list-unstyled ms-3">');
+            html = html.replace(/<li>/g, '<li class="mb-2" style="line-height: 1.8;">• ');
+            
+            // 중첩된 ul (관광지 상세 정보) 스타일
+            html = html.replace(/<ul class="list-unstyled ms-3">\s*<li class="mb-2" style="line-height: 1\.8;">•\s*<ul>/g, 
+                '<ul class="ms-4 mt-2 mb-2"><li style="list-style: none;"><ul>');
+            
+            // 내부 리스트 항목 스타일 (주소, 설명, 입장료)
+            html = html.replace(/(<ul>(?:(?!<\/ul>).)*?)<li class="mb-2" style="line-height: 1\.8;">•\s*주소:/g, 
+                '$1<li class="mb-1" style="color: #666;"><strong>📍 주소:</strong>');
+            html = html.replace(/(<ul>(?:(?!<\/ul>).)*?)<li class="mb-2" style="line-height: 1\.8;">•\s*설명:/g, 
+                '$1<li class="mb-1" style="color: #666;"><strong>📝 설명:</strong>');
+            html = html.replace(/(<ul>(?:(?!<\/ul>).)*?)<li class="mb-2" style="line-height: 1\.8;">•\s*입장료:/g, 
+                '$1<li class="mb-1" style="color: #666;"><strong>💰 입장료:</strong>');
+            
+            // 연속된 <br> 태그를 하나로 줄임
+            html = html.replace(/(<br>\s*){3,}/g, '<br><br>');
+            
+            return html;
+        }
+
+        function formatTravelPlan(planData) {
+            let result = '## 여행 계획\n\n';
+            
+            if (planData.attractionInfo) {
+                result += '### 🏛️ 관광지 정보\n' + planData.attractionInfo + '\n\n';
+            }
+            
+            if (planData.restaurantInfo) {
+                result += '### 🍽️ 맛집 정보\n' + planData.restaurantInfo + '\n\n';
+            }
+            
+            if (planData.accommodationInfo) {
+                result += '### 🏨 숙소 정보\n' + planData.accommodationInfo + '\n\n';
+            }
+            
+            if (planData.plan) {
+                result += '### 📅 여행 일정\n' + planData.plan + '\n\n';
+            }
+            
+            if (planData.budgetAnalysis) {
+                result += '### 💰 예산 분석\n' + planData.budgetAnalysis + '\n\n';
+            }
+            
+            return result;
+        }
+
+        function renderJsonViewer(jsonData, title = 'JSON') {
+            const jsonString = JSON.stringify(jsonData, null, 2);
+            const jsonId = 'json-' + Date.now();
+            
+            return `
+                <div class="json-viewer-container">
+                    <div class="json-viewer-header">
+                        <span class="json-viewer-title"><i class="fas fa-code me-2"></i>${title}</span>
+                        <div class="json-viewer-controls">
+                            <button class="json-btn" onclick="toggleJsonCollapse('${jsonId}')">
+                                <i class="fas fa-compress-alt"></i>접기/펼치기
+                            </button>
+                            <button class="json-btn" onclick="copyJson('${jsonId}')">
+                                <i class="fas fa-copy"></i>복사
+                            </button>
+                            <button class="json-btn" onclick="downloadJson('${jsonId}', '${title}')">
+                                <i class="fas fa-download"></i>다운로드
+                            </button>
+                        </div>
+                    </div>
+                    <div class="json-content" id="${jsonId}">${syntaxHighlight(jsonString)}</div>
+                </div>
+            `;
+        }
+        
+        function syntaxHighlight(json) {
+            json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+            return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^"\\])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function (match) {
+                let cls = 'json-number';
+                if (/^"/.test(match)) {
+                    if (/:$/.test(match)) {
+                        cls = 'json-key';
+                    } else {
+                        cls = 'json-string';
+                    }
+                } else if (/true|false/.test(match)) {
+                    cls = 'json-boolean';
+                } else if (/null/.test(match)) {
+                    cls = 'json-null';
+                }
+                return '<span class="' + cls + '">' + match + '</span>';
+            });
+        }
+        
+        function copyJson(elementId) {
+            const element = document.getElementById(elementId);
+            const text = element.textContent;
+            navigator.clipboard.writeText(text).then(() => {
+                // 복사 완료 알림
+                const btn = event.target.closest('.json-btn');
+                const originalHTML = btn.innerHTML;
+                btn.innerHTML = '<i class="fas fa-check me-1"></i>복사됨!';
+                btn.style.background = '#28a745';
+                setTimeout(() => {
+                    btn.innerHTML = originalHTML;
+                    btn.style.background = '#333';
+                }, 2000);
+            });
+        }
+        
+        function toggleJsonCollapse(elementId) {
+            const element = document.getElementById(elementId);
+            const content = element.textContent;
+            
+            if (element.dataset.collapsed === 'true') {
+                // 펼치기
+                element.innerHTML = syntaxHighlight(element.dataset.fullContent);
+                element.dataset.collapsed = 'false';
+            } else {
+                // 접기
+                element.dataset.fullContent = content;
+                try {
+                    const parsed = JSON.parse(content);
+                    const collapsed = JSON.stringify(parsed);
+                    element.innerHTML = syntaxHighlight(collapsed);
+                    element.dataset.collapsed = 'true';
+                } catch (e) {
+                    // JSON parse error
+                }
+            }
+        }
+        
+        function downloadJson(elementId, filename) {
+            const element = document.getElementById(elementId);
+            const text = element.textContent;
+            const blob = new Blob([text], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename.replace(/[^a-z0-9]/gi, '_').toLowerCase() + '.json';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // 페이지 로드 시 입력창 포커스
+        window.onload = () => {
+            document.getElementById('messageInput').focus();
+        };
+    </script>
+</body>
+</html>
